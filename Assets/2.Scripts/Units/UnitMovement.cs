@@ -4,11 +4,13 @@ public class UnitMovement : MonoBehaviour
 {
     private UnitStats stats;
     private UnitCombat combat;
+    private UnitAnimationController animationController;
 
     private void Awake()
     {
         stats = GetComponent<UnitStats>();
         combat = GetComponent<UnitCombat>();
+        animationController = GetComponent<UnitAnimationController>();
     }
 
     private void Update()
@@ -20,6 +22,11 @@ public class UnitMovement : MonoBehaviour
 
         if (combat != null && combat.HasTargetInRange())
         {
+            if (animationController != null)
+            {
+                animationController.PlayIdle();
+            }
+
             return;
         }
 
@@ -30,6 +37,11 @@ public class UnitMovement : MonoBehaviour
     {
         float direction = stats.team == UnitTeam.Ally ? 1f : -1f;
 
-        transform.Translate(Vector2.right * direction * stats.moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.right * direction * stats.moveSpeed * Time.deltaTime, Space.World);
+
+        if (animationController != null)
+        {
+            animationController.PlayWalk();
+        }
     }
 }

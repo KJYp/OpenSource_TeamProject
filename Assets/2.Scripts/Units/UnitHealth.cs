@@ -32,6 +32,30 @@ public class UnitHealth : MonoBehaviour
     {
         stats.isDead = true;
 
+        UnitMovement movement = GetComponent<UnitMovement>();
+        if (movement != null)
+        {
+            movement.enabled = false;
+        }
+
+        UnitCombat combat = GetComponent<UnitCombat>();
+        if (combat != null)
+        {
+            combat.enabled = false;
+        }
+
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
+        UnitAnimationController animationController = GetComponent<UnitAnimationController>();
+        if (animationController != null)
+        {
+            animationController.PlayDie();
+        }
+
         Debug.Log($"{gameObject.name} died.");
 
         Destroy(gameObject, 1.5f);

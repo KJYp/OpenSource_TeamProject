@@ -4,12 +4,14 @@ public class UnitCombat : MonoBehaviour
 {
     private UnitStats stats;
     private UnitHealth currentTarget;
+    private UnitAnimationController animationController;
 
     private float lastAttackTime;
 
     private void Awake()
     {
         stats = GetComponent<UnitStats>();
+        animationController = GetComponent<UnitAnimationController>();
     }
 
     private void Update()
@@ -68,6 +70,11 @@ public class UnitCombat : MonoBehaviour
         lastAttackTime = Time.time;
 
         Debug.Log($"{gameObject.name} attacks {currentTarget.gameObject.name}");
+
+        if (animationController != null)
+        {
+            animationController.PlayAttack();
+        }
 
         currentTarget.TakeDamage(stats.attackPower);
     }
