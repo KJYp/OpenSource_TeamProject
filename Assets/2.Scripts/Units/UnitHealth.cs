@@ -65,4 +65,15 @@ public class UnitHealth : MonoBehaviour
     {
         return currentHp;
     }
+
+    public float GetHpRatio()
+    {
+        if (stats == null || stats.maxHp <= 0)
+        {
+            return 0f;
+        }
+
+        return Mathf.Clamp01(currentHp / stats.maxHp);
+    }
+
 }
