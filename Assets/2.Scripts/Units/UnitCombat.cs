@@ -21,11 +21,23 @@ public class UnitCombat : MonoBehaviour
             return;
         }
 
-        FindTarget();
-
-        if (currentTarget != null)
+        if (stats.attackType == AttackType.Healer)
         {
-            TryAttack();
+            FindHealTarget();
+
+            if (currentTarget != null)
+            {
+                TryHeal();
+            }
+        }
+        else
+        {
+            FindTarget();
+
+            if (currentTarget != null)
+            {
+                TryAttack();
+            }
         }
     }
 
@@ -51,6 +63,42 @@ public class UnitCombat : MonoBehaviour
             }
 
             if (targetStats.team == stats.team)
+            {
+                continue;
+            }
+
+            currentTarget = targetHealth;
+            break;
+        }
+    }
+
+    private void FindHealTarget()
+    {
+        currentTarget = null;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, stats.attackRange);
+
+        foreach (Collider2D hit in hits)
+        {
+            UnitStats targetStats = hit.GetComponent<UnitStats>();
+            UnitHealth targetHealth = hit.GetComponent<UnitHealth>();
+
+            if (targetStats == null || targetHealth == null)
+            {
+                continue;
+            }
+
+            if (targetStats.isDead)
+            {
+                continue;
+            }
+
+            if (targetStats.team != stats.team)
+            {
+                continue;
+            }
+
+            if (targetHealth.IsFullHp())
             {
                 continue;
             }
@@ -86,6 +134,25 @@ public class UnitCombat : MonoBehaviour
         }
     }
 
+    private void TryHeal()
+    {
+        if (Time.time - lastAttackTime < stats.attackCooldown)
+        {
+            return;
+        }
+
+        lastAttackTime = Time.time;
+
+        Debug.Log($"{gameObject.name} heals {currentTarget.gameObject.name}");
+
+        if (animationController != null)
+        {
+            animationController.PlayAttack();
+        }
+
+        currentTarget.Heal(stats.healPower);
+    }
+
     private void FireProjectile()
     {
         if (stats.projectilePrefab == null || stats.projectileSpawnPoint == null)
@@ -118,6 +185,20 @@ public class UnitCombat : MonoBehaviour
     public bool HasTargetInRange()
     {
         FindTarget();
+        return currentTarget != null;
+    }
+
+    public bool HasActionTargetInRange()
+    {
+        if (stats.attackType == AttackType.Healer)
+        {
+            FindHealTarget();
+        }
+        else
+        {
+            FindTarget();
+        }
+
         return currentTarget != null;
     }
 

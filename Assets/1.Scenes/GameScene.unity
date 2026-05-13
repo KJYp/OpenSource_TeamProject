@@ -975,7 +975,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 610907375}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1043564226}
+        m_TargetAssemblyTypeName: UnitSpawner, Assembly-CSharp
+        m_MethodName: SpawnHealerUnit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &610907375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2314,6 +2326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UnitSpawner
   allyUnitPrefab: {fileID: 7524034082308197803, guid: f40da73c2e54e5c4da6da8df1fe0de7d, type: 3}
   enemyUnitPrefab: {fileID: 6833409487523670268, guid: 47e815c0e45cda2498b32a15f6735a13, type: 3}
+  healerUnitPrefab: {fileID: 7524034082308197803, guid: 51765a12350fe4f4991a245783d1848e, type: 3}
   allySpawnPoint: {fileID: 901080266}
   enemySpawnPoint: {fileID: 579812769}
 --- !u!4 &1043564227

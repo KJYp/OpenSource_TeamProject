@@ -20,7 +20,7 @@ public class UnitMovement : MonoBehaviour
             return;
         }
 
-        if (combat != null && combat.HasTargetInRange())
+        if (combat != null && combat.HasActionTargetInRange())
         {
             if (animationController != null)
             {

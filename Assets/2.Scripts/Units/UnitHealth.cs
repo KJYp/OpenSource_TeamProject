@@ -61,6 +61,23 @@ public class UnitHealth : MonoBehaviour
         Destroy(gameObject, 1.5f);
     }
 
+    public void Heal(float amount)
+    {
+        if (stats.isDead)
+        {
+            return;
+        }
+
+        currentHp += amount;
+
+        if (currentHp > stats.maxHp)
+        {
+            currentHp = stats.maxHp;
+        }
+
+        Debug.Log($"{gameObject.name} healed {amount}. Current HP: {currentHp}");
+    }
+
     public float GetCurrentHp()
     {
         return currentHp;
@@ -76,4 +93,8 @@ public class UnitHealth : MonoBehaviour
         return Mathf.Clamp01(currentHp / stats.maxHp);
     }
 
+    public bool IsFullHp()
+    {
+        return currentHp >= stats.maxHp;
+    }
 }

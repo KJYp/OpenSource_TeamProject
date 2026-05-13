@@ -9,7 +9,8 @@ public enum UnitTeam
 public enum AttackType
 {
     Melee,
-    Ranged
+    Ranged,
+    Healer
 }
 
 public class UnitStats : MonoBehaviour
@@ -31,6 +32,9 @@ public class UnitStats : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
     public float projectileSpeed = 5f;
+
+    [Header("Heal")]
+    public float healPower = 10f;
 
     [Header("State")]
     public bool isDead = false;
