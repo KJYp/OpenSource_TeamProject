@@ -453,11 +453,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
   team: 1
+  attackType: 0
   maxHp: 80
   attackPower: 8
-  attackRange: 1.5
+  attackRange: 1.2
   attackCooldown: 1
   moveSpeed: 1.5
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  projectileSpeed: 5
   isDead: 0
 --- !u!114 &8903716530009340385
 MonoBehaviour:

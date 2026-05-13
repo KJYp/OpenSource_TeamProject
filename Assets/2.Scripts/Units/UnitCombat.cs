@@ -76,7 +76,43 @@ public class UnitCombat : MonoBehaviour
             animationController.PlayAttack();
         }
 
-        currentTarget.TakeDamage(stats.attackPower);
+        if (stats.attackType == AttackType.Melee)
+        {
+            currentTarget.TakeDamage(stats.attackPower);
+        }
+        else if (stats.attackType == AttackType.Ranged)
+        {
+            FireProjectile();
+        }
+    }
+
+    private void FireProjectile()
+    {
+        if (stats.projectilePrefab == null || stats.projectileSpawnPoint == null)
+        {
+            Debug.LogWarning($"{gameObject.name}의 Projectile 설정이 비어 있습니다.");
+            return;
+        }
+
+        Vector2 direction = stats.team == UnitTeam.Ally ? Vector2.right : Vector2.left;
+
+        GameObject projectileObject = Instantiate(
+            stats.projectilePrefab,
+            stats.projectileSpawnPoint.position,
+            Quaternion.identity
+        );
+
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+
+        if (projectile != null)
+        {
+            projectile.Init(
+                stats.team,
+                stats.attackPower,
+                stats.projectileSpeed,
+                direction
+            );
+        }
     }
 
     public bool HasTargetInRange()
