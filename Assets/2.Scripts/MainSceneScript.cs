@@ -7,19 +7,33 @@ using TMPro;
 public class MainSceneScript : MonoBehaviour
 {
     public GameObject startPanel;
-    public GameObject tutorialPanel;
+    public GameObject storyPanel;
     public GameObject mainPanel;
+    public GameObject tutorialPanel;
     public GameObject endPanel;
     public GameObject popupPanel;
+
+    public Image storyImage;
+    public Sprite[] storySprite;
 
     public Image tutorialImage;
     public Sprite[] tutorialSprite;
 
+    public Image endingImage;
+    public Sprite[] endingSprite;
+
     public TMP_Text stageTitleText;
     public TMP_Text stageDescriptionText;
 
+    private bool storyPlaying = false;
+    private int storyIndex = 0;
+
     private bool tutorialPlaying = false;
     private int tutorialIndex = 0;
+
+    private bool endingPlaying = false;
+    private int endingIndex = 0;
+
     private int stageParameter = 0;
 
     void Start()
@@ -29,8 +43,9 @@ public class MainSceneScript : MonoBehaviour
         if (isMainPanel == 0)
         {
             startPanel.SetActive(true);
-            tutorialPanel.SetActive(false);
+            storyPanel.SetActive(false);
             mainPanel.SetActive(false);
+            tutorialPanel.SetActive(false);
             endPanel.SetActive(false);
         }
         else
@@ -38,27 +53,44 @@ public class MainSceneScript : MonoBehaviour
             if (IsClearGame())
             {
                 startPanel.SetActive(false);
-                tutorialPanel.SetActive(false);
+                storyPanel.SetActive(false);
                 mainPanel.SetActive(false);
+                tutorialPanel.SetActive(false);
                 endPanel.SetActive(true);
+
+                endingIndex = 0;
+                endingImage.sprite = endingSprite[0];
+                endingPlaying = true;
             }
             else
             {
                 startPanel.SetActive(false);
-                tutorialPanel.SetActive(false);
+                storyPanel.SetActive(false);
                 mainPanel.SetActive(true);
+                tutorialPanel.SetActive(false);
                 endPanel.SetActive(false);
             }
         }
 
         popupPanel.SetActive(false);
+        
     }
 
     void Update()
     {
+        if (storyPlaying && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            StoryNext();
+        }
+
         if (tutorialPlaying && Mouse.current.leftButton.wasPressedThisFrame)
         {
             TutorialNext();
+        }
+
+        if (endingPlaying && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            EndingNext();
         }
     }
 
@@ -78,11 +110,29 @@ public class MainSceneScript : MonoBehaviour
     public void StartBtnClick()
     {
         startPanel.SetActive(false);
-        tutorialPanel.SetActive(true);
+        storyPanel.SetActive(true);
 
-        tutorialIndex = 0;
-        tutorialImage.sprite = tutorialSprite[0];
-        tutorialPlaying = true;
+        storyIndex = 0;
+        storyImage.sprite = storySprite[0];
+        storyPlaying = true;
+    }
+
+    //storyPanel 장면 넘기기
+    public void StoryNext()
+    {
+        storyIndex++;
+
+        if (storyIndex < storySprite.Length)
+        {
+            storyImage.sprite = storySprite[storyIndex];
+        }
+        else
+        {
+            storyPanel.SetActive(false);
+            mainPanel.SetActive(true);
+
+            storyPlaying = false;
+        }
     }
 
     //tutorialPanel 장면 넘기기
@@ -93,13 +143,26 @@ public class MainSceneScript : MonoBehaviour
         if (tutorialIndex < tutorialSprite.Length)
         {
             tutorialImage.sprite = tutorialSprite[tutorialIndex];
-        }
+        } 
         else
         {
-            tutorialPanel.SetActive(false);
-            mainPanel.SetActive(true);
-
             tutorialPlaying = false;
+            SceneManager.LoadScene("GameScene");
+        }
+    }
+
+    //endPanel 장면 넘기기
+    public void EndingNext()
+    {
+        endingIndex++;
+
+        if (endingIndex < endingSprite.Length)
+        {
+            endingImage.sprite = endingSprite[endingIndex];
+        } 
+        else
+        {
+            endingPlaying = false;
         }
     }
 
@@ -153,7 +216,19 @@ public class MainSceneScript : MonoBehaviour
         PlayerPrefs.SetInt("stageParameter", stageParameter);
         PlayerPrefs.Save();
 
-        SceneManager.LoadScene("GameScene");
+        if (stageParameter == 1)
+        {
+            mainPanel.SetActive(false);
+            tutorialPanel.SetActive(true);
+
+            tutorialIndex = 0;
+            tutorialImage.sprite = tutorialSprite[0];
+            tutorialPlaying = true;
+        }
+        else
+        {
+            SceneManager.LoadScene("GameScene");
+        }
     }
 
     //mainPanel 업그레이드 버튼

@@ -27,9 +27,12 @@ public class GameSceneScript : MonoBehaviour
 
     private int currentMana = 0;
     private int maxMana = 100;
+
     void Start()
     {
         pausePanel.SetActive(false);
+        PauseEvent(false);
+
         PlayerPrefs.SetInt("isMainPanel", 1);
 
         int stageParameter = PlayerPrefs.GetInt("stageParameter", 0);
@@ -112,15 +115,29 @@ public class GameSceneScript : MonoBehaviour
         }
     }
 
+    public void PauseEvent(bool isPause)
+    {
+        if (isPause)
+        {
+            Time.timeScale = 0f;
+        } 
+        else
+        {
+            Time.timeScale = 1f;
+        }
+    }
+
     //일시정지 버튼
     public void PauseBtnClick()
     {
+        PauseEvent(true);
         pausePanel.SetActive(true);
     }
 
     //일시정지 계속버튼
     public void CloseBtnClick()
      {
+        PauseEvent(false);
         pausePanel.SetActive(false);
      }
 
