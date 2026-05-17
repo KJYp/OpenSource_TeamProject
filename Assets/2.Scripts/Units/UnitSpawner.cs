@@ -2,45 +2,49 @@ using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
-    [Header("Unit Prefabs")]
-    public GameObject allyUnitPrefab;
-    public GameObject enemyUnitPrefab;
+    [Header("Units")]
+    public GameObject meleeUnitPrefab;
+    public GameObject tankUnitPrefab;
+    public GameObject rangedUnitPrefab;
     public GameObject healerUnitPrefab;
+    public GameObject damageUnitPrefab;
 
-    [Header("Spawn Points")]
+    [Header("Spawn Point")]
     public Transform allySpawnPoint;
-    public Transform enemySpawnPoint;
 
-    public void SpawnAllyUnit()
+    public void SpawnMelee()
     {
-        if (allyUnitPrefab == null || allySpawnPoint == null)
-        {
-            Debug.LogWarning("Ally Unit Prefab 또는 Ally Spawn Point가 설정되지 않았습니다.");
-            return;
-        }
-
-        Instantiate(allyUnitPrefab, allySpawnPoint.position, Quaternion.identity);
+        SpawnUnit(meleeUnitPrefab);
     }
 
-    public void SpawnEnemyUnit()
+    public void SpawnTank()
     {
-        if (enemyUnitPrefab == null || enemySpawnPoint == null)
-        {
-            Debug.LogWarning("Enemy Unit Prefab 또는 Enemy Spawn Point가 설정되지 않았습니다.");
-            return;
-        }
-
-        Instantiate(enemyUnitPrefab, enemySpawnPoint.position, Quaternion.identity);
+        SpawnUnit(tankUnitPrefab);
     }
 
-    public void SpawnHealerUnit()
+    public void SpawnRanged()
     {
-        if (healerUnitPrefab == null || allySpawnPoint == null)
+        SpawnUnit(rangedUnitPrefab);
+    }
+
+    public void SpawnHealer()
+    {
+        SpawnUnit(healerUnitPrefab);
+    }
+
+    public void SpawnDamage()
+    {
+        SpawnUnit(damageUnitPrefab);
+    }
+
+    private void SpawnUnit(GameObject prefab)
+    {
+        if (prefab == null || allySpawnPoint == null)
         {
-            Debug.LogWarning("Healer Unit Prefab 또는 Ally Spawn Point가 설정되지 않았습니다.");
+            Debug.LogWarning("Prefab 또는 SpawnPoint가 비어 있음");
             return;
         }
 
-        Instantiate(healerUnitPrefab, allySpawnPoint.position, Quaternion.identity);
+        Instantiate(prefab, allySpawnPoint.position, Quaternion.identity);
     }
 }

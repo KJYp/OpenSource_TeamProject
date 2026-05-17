@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: 8575d55142b4da740bdbcd4203b9ea05
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5092837887179683050
+    second: AllyDamageUnit Walk_0
+  - first:
+      213: 4339349159866797826
+    second: AllyDamageUnit Walk_1
+  - first:
+      213: 9129194373314334292
+    second: AllyDamageUnit Walk_2
+  - first:
+      213: 7418329352756708717
+    second: AllyDamageUnit Walk_3
+  - first:
+      213: -1374419859190133358
+    second: AllyDamageUnit Walk_4
+  - first:
+      213: -8484804007834633307
+    second: AllyDamageUnit Walk_5
+  - first:
+      213: -6463827175088434349
+    second: AllyDamageUnit Walk_6
+  - first:
+      213: 6334948446321732030
+    second: AllyDamageUnit Walk_7
+  - first:
+      213: 7599989342695438345
+    second: AllyDamageUnit Walk_8
+  - first:
+      213: -2270215439594494915
+    second: AllyDamageUnit Walk_9
+  - first:
+      213: 1393735091905625843
+    second: AllyDamageUnit Walk_10
+  - first:
+      213: -5169807084606617111
+    second: AllyDamageUnit Walk_11
+  - first:
+      213: -2369604998228936289
+    second: AllyDamageUnit Walk_12
+  - first:
+      213: 6664612125403316545
+    second: AllyDamageUnit Walk_13
+  - first:
+      213: 1249709421350185767
+    second: AllyDamageUnit Walk_14
+  - first:
+      213: 1009710767132802262
+    second: AllyDamageUnit Walk_15
+  - first:
+      213: 6430873525648971254
+    second: AllyDamageUnit Walk_16
+  - first:
+      213: 8537994461526606460
+    second: AllyDamageUnit Walk_17
+  - first:
+      213: -4210719047348021831
+    second: AllyDamageUnit Walk_18
+  - first:
+      213: -8027111578538519005
+    second: AllyDamageUnit Walk_19
+  - first:
+      213: 6152106523909846746
+    second: AllyDamageUnit Walk_20
+  - first:
+      213: -5913763784931223647
+    second: AllyDamageUnit Walk_21
+  - first:
+      213: 9001835062074852753
+    second: AllyDamageUnit Walk_22
+  - first:
+      213: -4566381397578140750
+    second: AllyDamageUnit Walk_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AllyDamageUnit Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae4fefb43156da640800000000000000
+      internalID: 5092837887179683050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AllyDamageUnit Walk_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 384
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f004ee117783c30800000000000000
+      internalID: 4339349159866797826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AllyDamageUnit Walk_2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 384
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e45eaf9e961be70800000000000000
+      internalID: 9129194373314334292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AllyDamageUnit Walk_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 384
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65cae90e3333f660800000000000000
+      internalID: 7418329352756708717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: be365efeff6ecec47a30de1555b9d460
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":384.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      AllyDamageUnit Walk_0: 5092837887179683050
+      AllyDamageUnit Walk_1: 4339349159866797826
+      AllyDamageUnit Walk_2: 9129194373314334292
+      AllyDamageUnit Walk_3: 7418329352756708717
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

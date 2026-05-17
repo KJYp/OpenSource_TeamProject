@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 2261811388870065021}
   - component: {fileID: 520579060712907538}
   - component: {fileID: 4910905856419807921}
+  - component: {fileID: 6170602450865922759}
   m_Layer: 0
   m_Name: EnemyUnit
   m_TagString: Untagged
@@ -462,6 +463,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 0}
   projectileSpawnPoint: {fileID: 0}
   projectileSpeed: 5
+  healPower: 10
   isDead: 0
 --- !u!114 &8903716530009340385
 MonoBehaviour:
@@ -511,3 +513,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6b979f28a26894aafb26a4da8494b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationController
+--- !u!95 &6170602450865922759
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6833409487523670268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

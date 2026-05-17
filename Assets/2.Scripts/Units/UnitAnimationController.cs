@@ -3,49 +3,31 @@ using UnityEngine;
 public class UnitAnimationController : MonoBehaviour
 {
     private Animator animator;
+    private string currentState;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void PlayIdle()
+    private void PlayAnimation(string state)
     {
         if (animator == null)
         {
             return;
         }
 
-        animator.SetTrigger("Idle");
-    }
-
-    public void PlayWalk()
-    {
-        if (animator == null)
+        if (currentState == state)
         {
             return;
         }
 
-        animator.SetTrigger("Walk");
+        currentState = state;
+        animator.SetTrigger(state);
     }
 
-    public void PlayAttack()
-    {
-        if (animator == null)
-        {
-            return;
-        }
-
-        animator.SetTrigger("Attack");
-    }
-
-    public void PlayDie()
-    {
-        if (animator == null)
-        {
-            return;
-        }
-
-        animator.SetTrigger("Die");
-    }
+    public void PlayIdle() => PlayAnimation("Idle");
+    public void PlayWalk() => PlayAnimation("Walk");
+    public void PlayAttack() => PlayAnimation("Attack");
+    public void PlayDie() => PlayAnimation("Die");
 }
