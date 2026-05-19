@@ -6,6 +6,8 @@ using TMPro;
 
 public class MainSceneScript : MonoBehaviour
 {
+    public MainSceneBGMScript BGMManger;
+
     public GameObject startPanel;
     public GameObject storyPanel;
     public GameObject mainPanel;
@@ -47,6 +49,8 @@ public class MainSceneScript : MonoBehaviour
             mainPanel.SetActive(false);
             tutorialPanel.SetActive(false);
             endPanel.SetActive(false);
+
+            BGMManger.PlayStartStoryBGM();
         }
         else
         {
@@ -57,6 +61,8 @@ public class MainSceneScript : MonoBehaviour
                 mainPanel.SetActive(false);
                 tutorialPanel.SetActive(false);
                 endPanel.SetActive(true);
+
+                BGMManger.PlayEndBGM();
 
                 endingIndex = 0;
                 endingImage.sprite = endingSprite[0];
@@ -69,6 +75,8 @@ public class MainSceneScript : MonoBehaviour
                 mainPanel.SetActive(true);
                 tutorialPanel.SetActive(false);
                 endPanel.SetActive(false);
+
+                BGMManger.PlayTutorialMainBGM(true);
             }
         }
 
@@ -132,6 +140,7 @@ public class MainSceneScript : MonoBehaviour
             mainPanel.SetActive(true);
 
             storyPlaying = false;
+            BGMManger.PlayTutorialMainBGM(false);
         }
     }
 
@@ -146,6 +155,7 @@ public class MainSceneScript : MonoBehaviour
         } 
         else
         {
+            BGMManger.SaveMainBGMTime();
             tutorialPlaying = false;
             SceneManager.LoadScene("GameScene");
         }
@@ -227,6 +237,7 @@ public class MainSceneScript : MonoBehaviour
         }
         else
         {
+            BGMManger.SaveMainBGMTime();
             SceneManager.LoadScene("GameScene");
         }
     }
@@ -234,6 +245,7 @@ public class MainSceneScript : MonoBehaviour
     //mainPanel 업그레이드 버튼
     public void UpgradeBtnClick()
     {
+        BGMManger.SaveMainBGMTime();
         SceneManager.LoadScene("UpgradeScene");
     }
 
