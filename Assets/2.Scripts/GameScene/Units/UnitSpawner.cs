@@ -37,7 +37,7 @@ public class UnitSpawner : MonoBehaviour
         SpawnUnit(damageUnitPrefab);
     }
 
-    private void SpawnUnit(GameObject prefab)
+    public void SpawnUnit(GameObject prefab)
     {
         if (prefab == null || allySpawnPoint == null)
         {

@@ -1,9 +1,11 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitCombat : MonoBehaviour
 {
     private UnitStats stats;
     private UnitHealth currentTarget;
+    private baseScript currentBaseTarget;
     private UnitAnimationController animationController;
 
     private float lastAttackTime;
@@ -38,6 +40,45 @@ public class UnitCombat : MonoBehaviour
             {
                 TryAttack();
             }
+            else
+            {
+                FindBaseTarget();
+
+                if (currentBaseTarget != null)
+                {
+                    TryAttackBase();
+                }
+            }
+        }
+    }
+
+    public void FindBaseTarget()
+    {
+        currentBaseTarget = null;
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, stats.attackRange);
+
+        foreach (Collider2D hit in hits)
+        {
+            baseScript baseScript = hit.GetComponent<baseScript>();
+
+            if (baseScript == null)
+            {
+                continue;   
+            }
+
+            if (baseScript.team == stats.team)
+            {
+                continue;
+            }
+
+            if (baseScript.isDestroyed)
+            {
+                continue;
+            }
+
+            currentBaseTarget = baseScript;
+            return;
         }
     }
 
@@ -106,6 +147,25 @@ public class UnitCombat : MonoBehaviour
             currentTarget = targetHealth;
             break;
         }
+    }
+
+    private void TryAttackBase()
+    {
+        if (Time.time - lastAttackTime < stats.attackCooldown)
+        {
+            return;
+        }
+
+        lastAttackTime = Time.time;
+
+        Debug.Log($"{gameObject.name} attacks base {currentBaseTarget.gameObject.name}");
+
+        if (animationController != null)
+        {
+            animationController.PlayAttack();
+        }
+
+        currentBaseTarget.TakeDamage(stats.attackPower);
     }
 
     private void TryAttack()
@@ -193,13 +253,19 @@ public class UnitCombat : MonoBehaviour
         if (stats.attackType == AttackType.Healer)
         {
             FindHealTarget();
-        }
-        else
-        {
-            FindTarget();
+            return currentTarget != null;
         }
 
-        return currentTarget != null;
+        FindTarget();
+
+        if (currentTarget != null)
+        {
+            return true;
+        }
+
+        FindBaseTarget();
+
+        return currentBaseTarget != null;
     }
 
     private void OnDrawGizmosSelected()

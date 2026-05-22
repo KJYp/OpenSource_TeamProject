@@ -97,7 +97,7 @@ public class UpgradeSceneScript : MonoBehaviour
         UnitStats stat = unitPrefabs[prefabParameter].GetComponent<UnitStats>();
 
         beforeUpgradeHPText.text = stat.maxHp.ToString();
-        beforeUpgradeAPText.text = isHealUnit ? stat.attackPower.ToString() : stat.healPower.ToString();
+        beforeUpgradeAPText.text = !isHealUnit ? stat.attackPower.ToString() : stat.healPower.ToString();
         beforeUpgradeACText.text = stat.attackCooldown.ToString();
         beforeUpgradeMSText.text = stat.moveSpeed.ToString();
         beforeUpgradeMCText.text = stat.maxHp.ToString();

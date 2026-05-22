@@ -110,8 +110,9 @@ public class MainSceneScript : MonoBehaviour
         bool stageClear_3 = PlayerPrefs.GetInt("stage3_clear", 0) == 1;
         bool stageClear_4 = PlayerPrefs.GetInt("stage4_clear", 0) == 1;
         bool stageClear_5 = PlayerPrefs.GetInt("stage5_clear", 0) == 1;
+        bool stageClear_6 = PlayerPrefs.GetInt("stage6_clear", 0) == 1;
 
-        return stageClear_1 && stageClear_2 && stageClear_3 && stageClear_4 && stageClear_5;
+        return stageClear_1 && stageClear_2 && stageClear_3 && stageClear_4 && stageClear_5 && stageClear_6;
     }
 
     //startPanel 시작하기 버튼
@@ -187,7 +188,6 @@ public class MainSceneScript : MonoBehaviour
             case 1:
                 stageTitleText.text = "기숙사";
                 stageDescriptionText.text = "기숙사입니다.기숙사입니다.기숙사입니다.기숙사입니다.기숙사입니다.";
-
                 break;
 
             case 2:
@@ -206,6 +206,11 @@ public class MainSceneScript : MonoBehaviour
                 break;
 
             case 5:
+                stageTitleText.text = "교양관";
+                stageDescriptionText.text = "교양관입니다.교양관입니다.교양관입니다.교양관입니다.";
+                break;
+
+            case 6:
                 stageTitleText.text = "어문학관";
                 stageDescriptionText.text = "어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.";
                 break;
