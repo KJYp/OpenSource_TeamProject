@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class UnitHealth : MonoBehaviour
 {
+    private UnitSounds sounds;
     private UnitStats stats;
     private float currentHp;
 
     private void Awake()
     {
+        sounds = GetComponent<UnitSounds>();
         stats = GetComponent<UnitStats>();
         currentHp = stats.maxHp;
     }
@@ -59,6 +61,7 @@ public class UnitHealth : MonoBehaviour
         Debug.Log($"{gameObject.name} died.");
 
         Destroy(gameObject, 1.5f);
+        sounds.PlayDieSound();
     }
 
     public void Heal(float amount)

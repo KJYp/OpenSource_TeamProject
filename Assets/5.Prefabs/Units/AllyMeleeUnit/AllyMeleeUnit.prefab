@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 1492193043494405149}
   - component: {fileID: 2189610864605891885}
   - component: {fileID: 5408135027147641015}
+  - component: {fileID: -2888774200207610954}
   - component: {fileID: 6944269378055038245}
   m_Layer: 0
   m_Name: AllyMeleeUnit
@@ -469,6 +470,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6b979f28a26894aafb26a4da8494b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationController
+--- !u!114 &-2888774200207610954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7524034082308197803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c706ffe9e95ff4748b04975c2d5f532d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnitSound
+  attackSound: {fileID: 8300000, guid: d7529465693a8134395f9be86622431a, type: 3}
+  dieSound: {fileID: 0}
 --- !u!95 &6944269378055038245
 Animator:
   serializedVersion: 7

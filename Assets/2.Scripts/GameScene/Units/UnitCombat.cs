@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class UnitCombat : MonoBehaviour
 {
+    private UnitSounds sounds;
     private UnitStats stats;
     private UnitHealth currentTarget;
     private baseScript currentBaseTarget;
@@ -12,6 +13,7 @@ public class UnitCombat : MonoBehaviour
 
     private void Awake()
     {
+        sounds = GetComponent<UnitSounds>();
         stats = GetComponent<UnitStats>();
         animationController = GetComponent<UnitAnimationController>();
     }
@@ -166,6 +168,7 @@ public class UnitCombat : MonoBehaviour
         }
 
         currentBaseTarget.TakeDamage(stats.attackPower);
+        sounds.PlayAttackSound();
     }
 
     private void TryAttack()
@@ -192,6 +195,8 @@ public class UnitCombat : MonoBehaviour
         {
             FireProjectile();
         }
+
+        sounds.PlayAttackSound();
     }
 
     private void TryHeal()
@@ -211,6 +216,7 @@ public class UnitCombat : MonoBehaviour
         }
 
         currentTarget.Heal(stats.healPower);
+        sounds.PlayAttackSound();
     }
 
     private void FireProjectile()
