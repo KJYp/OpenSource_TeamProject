@@ -240,10 +240,10 @@ GameObject:
   - component: {fileID: 1492193043494405149}
   - component: {fileID: 2189610864605891885}
   - component: {fileID: 5408135027147641015}
-  - component: {fileID: -2888774200207610954}
-  - component: {fileID: 6944269378055038245}
+  - component: {fileID: -2536208264283297087}
+  - component: {fileID: -2608036453641016130}
   m_Layer: 0
-  m_Name: AllyMeleeUnit
+  m_Name: EnemyDamageUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3872363575366824276}
@@ -315,12 +315,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 638864893, guid: 31efcd809a91989408168de8b2825b96, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -5687933486768884576, guid: 2e5e8fa9d4b51364ba2ede8c156e713e, type: 3}
+  m_Color: {r: 0.65882355, g: 0.16470589, b: 0.16470589, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.22, y: 2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -363,8 +363,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.22, y: 2}
-    newSize: {x: 1.22, y: 2}
+    oldSize: {x: 2.05, y: 2.13}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -410,13 +410,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a59b923dc3bd1849a0170dc9f683f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitStats
-  team: 0
-  attackType: 0
-  maxHp: 100
+  team: 1
+  attackType: 1
+  maxHp: 60
   attackPower: 10
-  attackRange: 1
-  attackCooldown: 1
-  moveSpeed: 2
+  attackRange: 4
+  attackCooldown: 1.2
+  moveSpeed: 1.5
   manaCost: 10
   killManaReward: 0
   projectilePrefab: {fileID: 1216715740597141444, guid: 0430fd0af731ed24790aca16d52512d7, type: 3}
@@ -424,10 +424,10 @@ MonoBehaviour:
   projectileSpeed: 5
   healPower: 10
   isDead: 0
-  isAreaAttack: 0
-  areaRadius: 1.5
+  isAreaAttack: 1
+  areaRadius: 2
   areaDamageMultiplier: 1
-  unitType: 0
+  unitType: 2
   grade: 1
 --- !u!114 &5436425562907408937
 MonoBehaviour:
@@ -477,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6b979f28a26894aafb26a4da8494b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitAnimationController
---- !u!114 &-2888774200207610954
+--- !u!114 &-2536208264283297087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,9 +489,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c706ffe9e95ff4748b04975c2d5f532d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitSound
-  attackSound: {fileID: 8300000, guid: d7529465693a8134395f9be86622431a, type: 3}
+  attackSound: {fileID: 8300000, guid: f2ceda9edbb28294bb3ed6c98205976b, type: 3}
   dieSound: {fileID: 0}
---- !u!95 &6944269378055038245
+--- !u!95 &-2608036453641016130
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -501,7 +501,7 @@ Animator:
   m_GameObject: {fileID: 7524034082308197803}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0a1e24efd5a419a409e55dd2ba99259e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21a1db33a707d6b4b86b2307ab30bb81, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
