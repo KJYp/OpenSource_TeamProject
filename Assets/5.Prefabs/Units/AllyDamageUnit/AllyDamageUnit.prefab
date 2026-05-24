@@ -413,15 +413,18 @@ MonoBehaviour:
   team: 0
   attackType: 1
   maxHp: 60
-  attackPower: 20
-  attackRange: 1
-  attackCooldown: 1
-  moveSpeed: 2
+  attackPower: 10
+  attackRange: 4
+  attackCooldown: 1.2
+  moveSpeed: 1.5
   projectilePrefab: {fileID: 1216715740597141444, guid: 0430fd0af731ed24790aca16d52512d7, type: 3}
   projectileSpawnPoint: {fileID: 5490513618946530409}
   projectileSpeed: 5
   healPower: 10
   isDead: 0
+  isAreaAttack: 1
+  areaRadius: 2
+  areaDamageMultiplier: 1
 --- !u!114 &5436425562907408937
 MonoBehaviour:
   m_ObjectHideFlags: 0

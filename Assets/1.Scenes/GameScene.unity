@@ -6717,11 +6717,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7263615209314593563, guid: 47e815c0e45cda2498b32a15f6735a13, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7263615209314593563, guid: 47e815c0e45cda2498b32a15f6735a13, type: 3}
       propertyPath: attackPower
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

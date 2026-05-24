@@ -38,4 +38,11 @@ public class UnitStats : MonoBehaviour
 
     [Header("State")]
     public bool isDead = false;
+
+    [Header("Area Attack")]
+    public bool isAreaAttack = false;
+    public float areaRadius = 1.5f;
+    public float areaDamageMultiplier = 1f;
+
+
 }

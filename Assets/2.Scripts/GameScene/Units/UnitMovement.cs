@@ -20,6 +20,32 @@ public class UnitMovement : MonoBehaviour
             return;
         }
 
+        if (stats.attackType == AttackType.Healer)
+        {
+            if (combat != null && combat.HasActionTargetInRange())
+            {
+                if (animationController != null)
+                {
+                    animationController.PlayIdle();
+                }
+
+                return;
+            }
+
+            if (combat != null && combat.HasInjuredAllyExists())
+            {
+                MoveForward();
+                return;
+            }
+
+            if (animationController != null)
+            {
+                animationController.PlayIdle();
+            }
+
+            return;
+        }
+
         if (combat != null && combat.HasActionTargetInRange())
         {
             if (animationController != null)

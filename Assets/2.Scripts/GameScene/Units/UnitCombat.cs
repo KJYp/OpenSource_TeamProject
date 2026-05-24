@@ -243,7 +243,10 @@ public class UnitCombat : MonoBehaviour
                 stats.team,
                 stats.attackPower,
                 stats.projectileSpeed,
-                direction
+                direction,
+                stats.isAreaAttack,
+                stats.areaRadius,
+                stats.areaDamageMultiplier
             );
         }
     }
@@ -272,6 +275,38 @@ public class UnitCombat : MonoBehaviour
         FindBaseTarget();
 
         return currentBaseTarget != null;
+    }
+
+    public bool HasInjuredAllyExists()
+    {
+        UnitHealth[] allUnits = FindObjectsByType<UnitHealth>(FindObjectsSortMode.None);
+
+        foreach (UnitHealth unitHealth in allUnits)
+        {
+            UnitStats unitStats = unitHealth.GetComponent<UnitStats>();
+
+            if (unitStats == null)
+            {
+                continue;
+            }
+
+            if (unitStats.isDead)
+            {
+                continue;
+            }
+
+            if (unitStats.team != stats.team)
+            {
+                continue;
+            }
+
+            if (!unitHealth.IsFullHp())
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private void OnDrawGizmosSelected()
