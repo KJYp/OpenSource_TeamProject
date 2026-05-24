@@ -28,6 +28,10 @@ public class UnitStats : MonoBehaviour
     public float attackCooldown = 1f;
     public float moveSpeed = 2f;
 
+    [Header("Resource")]
+    public int manaCost = 10;
+    public int killManaReward = 0;
+
     [Header("Projectile")]
     public GameObject projectilePrefab;
     public Transform projectileSpawnPoint;
@@ -44,5 +48,35 @@ public class UnitStats : MonoBehaviour
     public float areaRadius = 1.5f;
     public float areaDamageMultiplier = 1f;
 
+    [Header("Unit Info")]
+    public UnitType unitType;
+    public int grade = 1;
+
+
+    public void ApplyBalanceData(UnitGradeStats data)
+    {
+        if (data == null)
+        {
+            return;
+        }
+
+        grade = data.grade;
+
+        maxHp = data.maxHp;
+        attackPower = data.attackPower;
+        attackCooldown = data.attackCooldown;
+        moveSpeed = data.moveSpeed;
+        attackRange = data.attackRange;
+
+        projectileSpeed = data.projectileSpeed;
+
+        areaRadius = data.areaRadius;
+        areaDamageMultiplier = data.areaDamageMultiplier;
+
+        healPower = data.healPower;
+
+        manaCost = data.manaCost;
+        killManaReward = data.killManaReward;
+    }
 
 }

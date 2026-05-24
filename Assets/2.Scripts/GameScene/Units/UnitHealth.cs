@@ -100,4 +100,9 @@ public class UnitHealth : MonoBehaviour
     {
         return currentHp >= stats.maxHp;
     }
+
+    public void ResetHealthToMax()
+    {
+        currentHp = stats.maxHp;
+    }
 }

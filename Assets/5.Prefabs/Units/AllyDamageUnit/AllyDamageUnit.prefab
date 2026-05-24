@@ -417,6 +417,8 @@ MonoBehaviour:
   attackRange: 4
   attackCooldown: 1.2
   moveSpeed: 1.5
+  manaCost: 10
+  killManaReward: 0
   projectilePrefab: {fileID: 1216715740597141444, guid: 0430fd0af731ed24790aca16d52512d7, type: 3}
   projectileSpawnPoint: {fileID: 5490513618946530409}
   projectileSpeed: 5
@@ -425,6 +427,8 @@ MonoBehaviour:
   isAreaAttack: 1
   areaRadius: 2
   areaDamageMultiplier: 1
+  unitType: 2
+  grade: 1
 --- !u!114 &5436425562907408937
 MonoBehaviour:
   m_ObjectHideFlags: 0
