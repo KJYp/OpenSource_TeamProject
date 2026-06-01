@@ -419,7 +419,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   manaCost: 10
   killManaReward: 0
-  projectilePrefab: {fileID: 1216715740597141444, guid: 0430fd0af731ed24790aca16d52512d7, type: 3}
+  projectilePrefab: {fileID: 1216715740597141444, guid: ecad8346f3f63e3498274d92e7bdfe5f, type: 3}
   projectileSpawnPoint: {fileID: 5490513618946530409}
   projectileSpeed: 5
   healPower: 10

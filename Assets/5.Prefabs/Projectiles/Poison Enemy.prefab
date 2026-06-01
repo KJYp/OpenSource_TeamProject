@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2400395891009118713}
   - component: {fileID: 4194700155464382543}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: Poison Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 291.64758, y: 3.31053, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 5993a1a123962b449827682573ba0de9, type: 3}
-  m_Color: {r: 0.9452436, g: 0.9622642, b: 0.1143823, a: 1}
+  m_Sprite: {fileID: -4347532159779508366, guid: 6afeeeb2570cae14ab5b8d6295697a62, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 0b3402456d761e14f8e5160d058c693a
+guid: f95eced0bf6efff40a49441669ad8d6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6469720088993530910
-    second: AllyMeleeUnit Walk_0
+      213: -1049491927370966520
+    second: HealerUnit 3D_0
   - first:
-      213: 327384540996346454
-    second: AllyMeleeUnit Walk_1
+      213: 6922348860549637491
+    second: HealerUnit 3D_1
   - first:
-      213: 1708002274287395447
-    second: AllyMeleeUnit Walk_2
-  - first:
-      213: 2466089561654536070
-    second: AllyMeleeUnit Walk_3
+      213: 4024031991980311110
+    second: HealerUnit 3D_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,89 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AllyMeleeUnit Walk_0
+      name: HealerUnit 3D_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 384
-        height: 1024
+        x: 2
+        y: 8
+        width: 1022
+        height: 1470
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ebf45b6bdfe636a0800000000000000
-      internalID: -6469720088993530910
+      spriteID: 80ad96a07a47f61f0800000000000000
+      internalID: -1049491927370966520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllyMeleeUnit Walk_1
+      name: HealerUnit 3D_1
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 384
-        height: 1024
+        x: 121
+        y: 1187
+        width: 217
+        height: 203
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 652aa07618a1b8400800000000000000
-      internalID: 327384540996346454
+      spriteID: 375246ccc9f111060800000000000000
+      internalID: 6922348860549637491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AllyMeleeUnit Walk_2
+      name: HealerUnit 3D_2
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 384
-        height: 1024
+        x: 339
+        y: 1378
+        width: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 772a572e40b04b710800000000000000
-      internalID: 1708002274287395447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AllyMeleeUnit Walk_3
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 384
-        height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 687a7b2f36f493220800000000000000
-      internalID: 2466089561654536070
+      spriteID: 6424bc6c6cb38d730800000000000000
+      internalID: 4024031991980311110
       vertices: []
       indices: 
       edges: []
@@ -213,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 679be8973abf7b34f9e22b76e1ef1098
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,14 +196,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":384.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      AllyMeleeUnit Walk_0: -6469720088993530910
-      AllyMeleeUnit Walk_1: 327384540996346454
-      AllyMeleeUnit Walk_2: 1708002274287395447
-      AllyMeleeUnit Walk_3: 2466089561654536070
+      HealerUnit 3D_0: -1049491927370966520
+      HealerUnit 3D_1: 6922348860549637491
+      HealerUnit 3D_2: 4024031991980311110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
