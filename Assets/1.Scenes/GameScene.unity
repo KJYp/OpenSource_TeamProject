@@ -661,17 +661,17 @@ MonoBehaviour:
   resultPanel: {fileID: 678713815}
   backgroundRenderer: {fileID: 1038764184}
   enemyBaseRenderer: {fileID: 371740066}
-  stage1_background: {fileID: 435885165620124922, guid: 602ef3b0f127e234b8d2f22498ed4737, type: 3}
+  stage1_background: {fileID: 711513568527557887, guid: 64f38bfd1c6be8a44b7b6b5507cfb020, type: 3}
   stage1_enemyBase: {fileID: 3623366650361372247, guid: 7a8ffa3c6dbb78943b47f0dd1252bdce, type: 3}
-  stage2_background: {fileID: -985613639117528762, guid: f96534543b2083e4dba0b67e5d2c7bfb, type: 3}
+  stage2_background: {fileID: 3202994675493288188, guid: 721a1a06803dc0e47851ce600546f2e4, type: 3}
   stage2_enemyBase: {fileID: 1563036793080634963, guid: a57ca2634c832af42b9e3b831ed866be, type: 3}
-  stage3_background: {fileID: -1142271907883523116, guid: ff846f136299f2c418b6d648ba791ccf, type: 3}
+  stage3_background: {fileID: -919547822568125937, guid: 2f647eb079fb5d94dbcf54221986a6f3, type: 3}
   stage3_enemyBase: {fileID: -5063965887784784530, guid: a7b96431ddfa93740a3ad5ba405da912, type: 3}
-  stage4_background: {fileID: 7523484461565497362, guid: 6d77b68a5286f6345a10f08c1b125766, type: 3}
+  stage4_background: {fileID: -6923755828933855085, guid: 112fa0d7641b64749849c868b72ed65a, type: 3}
   stage4_enemyBase: {fileID: 7672105342991599115, guid: 1c0e597d821492144aaadac67de9cbc8, type: 3}
-  stage5_background: {fileID: 21300000, guid: 25a5eecebb940c44f80bd55bf6260475, type: 3}
+  stage5_background: {fileID: -5118783148100408553, guid: 07387b2e28035704bbd5bf12af9a177b, type: 3}
   stage5_enemyBase: {fileID: 21300000, guid: 59ddabafcb7fa63479437ddc1e154720, type: 3}
-  stage6_background: {fileID: 21300000, guid: 7ad287c92dfa06444a980749a66c16ee, type: 3}
+  stage6_background: {fileID: 5464333559532821040, guid: 17a435aa780516e44af1d4810acaa01e, type: 3}
   stage6_enemyBase: {fileID: 21300000, guid: d9816997f6ee1824793134467ac3790b, type: 3}
   manaSlider: {fileID: 1476947614}
   manaText: {fileID: 2016571799}
@@ -993,7 +993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.71907747, g: 0.71907747, b: 0.71907747, a: 1}
+  m_Color: {r: 0.43137258, g: 0.5529412, b: 0.1254902, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1430,7 +1430,7 @@ Transform:
   m_GameObject: {fileID: 579812768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3070,7 +3070,7 @@ Transform:
   m_GameObject: {fileID: 901080265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
+  m_LocalPosition: {x: -20, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3840,7 +3840,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 435885165620124922, guid: 602ef3b0f127e234b8d2f22498ed4737, type: 3}
+  m_Sprite: {fileID: 711513568527557887, guid: 64f38bfd1c6be8a44b7b6b5507cfb020, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3896,7 +3896,7 @@ Transform:
   m_GameObject: {fileID: 1043564225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.62373, y: -0.2773, z: 0}
+  m_LocalPosition: {x: -4.62373, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

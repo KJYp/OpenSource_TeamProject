@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 563c1b6b32274614b91ac0cd09d86823
+guid: 112fa0d7641b64749849c868b72ed65a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4579465431499772456
-    second: playerBase_0
+      213: -6923755828933855085
+    second: Gamebackground Night_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerBase_0
+      name: Gamebackground Night_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 675
-        height: 449
+        width: 1672
+        height: 941
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82299b10c878d8f30800000000000000
-      internalID: 4579465431499772456
+      spriteID: 3987bd8d1c0e9ef90800000000000000
+      internalID: -6923755828933855085
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e9eff84b513c524f926ae1a218e1d8a
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      playerBase_0: 4579465431499772456
+      Gamebackground Night_0: -6923755828933855085
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
