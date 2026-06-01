@@ -662,17 +662,17 @@ MonoBehaviour:
   backgroundRenderer: {fileID: 1038764184}
   enemyBaseRenderer: {fileID: 371740066}
   stage1_background: {fileID: 711513568527557887, guid: 64f38bfd1c6be8a44b7b6b5507cfb020, type: 3}
-  stage1_enemyBase: {fileID: 3623366650361372247, guid: 7a8ffa3c6dbb78943b47f0dd1252bdce, type: 3}
+  stage1_enemyBase: {fileID: -393672568197353540, guid: e5ef7e350c13d3545995d7ab54777283, type: 3}
   stage2_background: {fileID: 3202994675493288188, guid: 721a1a06803dc0e47851ce600546f2e4, type: 3}
-  stage2_enemyBase: {fileID: 1563036793080634963, guid: a57ca2634c832af42b9e3b831ed866be, type: 3}
+  stage2_enemyBase: {fileID: 3032400113675930684, guid: ea61fb5c5913de7499d60eb63cf60a7b, type: 3}
   stage3_background: {fileID: -919547822568125937, guid: 2f647eb079fb5d94dbcf54221986a6f3, type: 3}
-  stage3_enemyBase: {fileID: -5063965887784784530, guid: a7b96431ddfa93740a3ad5ba405da912, type: 3}
+  stage3_enemyBase: {fileID: -342519204, guid: ceb6831b6cea0e84cabf070598a3e3ad, type: 3}
   stage4_background: {fileID: -6923755828933855085, guid: 112fa0d7641b64749849c868b72ed65a, type: 3}
-  stage4_enemyBase: {fileID: 7672105342991599115, guid: 1c0e597d821492144aaadac67de9cbc8, type: 3}
+  stage4_enemyBase: {fileID: 697807268, guid: 207996c31ed879540a31b4415b361466, type: 3}
   stage5_background: {fileID: -5118783148100408553, guid: 07387b2e28035704bbd5bf12af9a177b, type: 3}
-  stage5_enemyBase: {fileID: 21300000, guid: 59ddabafcb7fa63479437ddc1e154720, type: 3}
+  stage5_enemyBase: {fileID: -854204141, guid: 12e5be902ac45d441be25ddff71d1764, type: 3}
   stage6_background: {fileID: 5464333559532821040, guid: 17a435aa780516e44af1d4810acaa01e, type: 3}
-  stage6_enemyBase: {fileID: 21300000, guid: d9816997f6ee1824793134467ac3790b, type: 3}
+  stage6_enemyBase: {fileID: 710109422, guid: f98cd6ba2f1c5f24992e19305134224a, type: 3}
   manaSlider: {fileID: 1476947614}
   manaText: {fileID: 2016571799}
   stageText: {fileID: 947019150}
@@ -4726,7 +4726,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4579465431499772456, guid: 563c1b6b32274614b91ac0cd09d86823, type: 3}
+  m_Sprite: {fileID: 5248562021439996402, guid: 6869e92084efed1428adab2854f99ec3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4791,7 +4791,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.75, y: 4.49}
+    oldSize: {x: 10.24, y: 6.826667}
     newSize: {x: 6.75, y: 4.49}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
