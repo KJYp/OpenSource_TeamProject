@@ -159,27 +159,27 @@ public class GameSceneScript : MonoBehaviour
         switch(stageParameter)
         {
             case 1:
-                gold = isWin ? 1000 : 100;
+                gold = isWin ? 100 : 10;
                 break;
 
             case 2:
-                gold = isWin ? 2000 : 200;
+                gold = isWin ? 140 : 10;
                 break;
 
             case 3:
-                gold = isWin ? 3000 : 300;
+                gold = isWin ? 190 : 20;
                 break;
 
             case 4:
-                gold = isWin ? 4000 : 400;
+                gold = isWin ? 250 : 20;
                 break;
 
             case 5:
-                gold = isWin ? 5000 : 500;
+                gold = isWin ? 320 : 30;
                 break;
 
             case 6:
-                gold = isWin ? 6000 : 600;
+                gold = isWin ? 400 : 40;
                 break;
         }
 

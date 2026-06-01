@@ -3,8 +3,22 @@ using UnityEngine;
 
 public class UnitBalanceDatabase : MonoBehaviour
 {
+    public static UnitBalanceDatabase Instance { get; private set; }
+
     [Header("Unit Grade Stats Table")]
     public List<UnitGradeStats> unitStatsTable = new List<UnitGradeStats>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public UnitGradeStats GetStats(UnitType unitType, int grade)
     {

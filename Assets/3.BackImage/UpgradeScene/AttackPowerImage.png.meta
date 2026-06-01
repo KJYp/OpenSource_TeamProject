@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 485479766737e1e49bf903f436e812a9
+guid: 3fc062b0a00a9eb4bbc971aefd356cd2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8796941764284691477
-    second: AttackPowerImage_0
+      213: 6380105564640697137
+    second: Iron Sword_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AttackPowerImage_0
+      name: Iron Sword_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 88
-        width: 920
-        height: 835
+        x: 1
+        y: 0
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 514bcf92de3051a70800000000000000
-      internalID: 8796941764284691477
+      spriteID: 13bd6e13530ba8850800000000000000
+      internalID: 6380105564640697137
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AttackPowerImage_0: 8796941764284691477
+      Iron Sword_0: 6380105564640697137
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

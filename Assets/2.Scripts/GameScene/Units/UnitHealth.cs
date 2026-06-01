@@ -61,7 +61,6 @@ public class UnitHealth : MonoBehaviour
         Debug.Log($"{gameObject.name} died.");
 
         Destroy(gameObject, 1.5f);
-        sounds.PlayDieSound();
     }
 
     public void Heal(float amount)

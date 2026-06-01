@@ -6,7 +6,6 @@ public class UnitSounds : MonoBehaviour
 
     [Header("Unit Sounds")]
     public AudioClip attackSound;
-    public AudioClip dieSound;
 
     private void Awake()
     {
@@ -24,11 +23,6 @@ public class UnitSounds : MonoBehaviour
     public void PlayAttackSound()
     {
         PlaySound(attackSound);
-    }
-
-    public void PlayDieSound()
-    {
-        PlaySound(dieSound);
     }
 
     private void PlaySound(AudioClip clip)

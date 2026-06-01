@@ -28,4 +28,5 @@ public class UnitGradeStats
     [Header("Resource")]
     public int manaCost;
     public int killManaReward;
+    public int upgradeCost;
 }

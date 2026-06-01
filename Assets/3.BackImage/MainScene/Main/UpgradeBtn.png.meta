@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 126a2b55b79bf3743ad9b752680f12b9
+guid: 40b948f1537b0bd44ad1de7ade30c8fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8146698894396599735
-    second: stageBtn_0
+      213: 9120274773078298782
+    second: Lantern_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stageBtn_0
+      name: Lantern_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 1024
-        height: 1532
+        width: 29
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7bda39c3b73ee0170800000000000000
-      internalID: 8146698894396599735
+      spriteID: e90d947b599b19e70800000000000000
+      internalID: 9120274773078298782
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stageBtn_0: 8146698894396599735
+      Lantern_0: 9120274773078298782
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
