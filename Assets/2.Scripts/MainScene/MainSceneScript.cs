@@ -187,32 +187,32 @@ public class MainSceneScript : MonoBehaviour
         {
             case 1:
                 stageTitleText.text = "기숙사";
-                stageDescriptionText.text = "기숙사입니다.기숙사입니다.기숙사입니다.기숙사입니다.기숙사입니다.";
+                stageDescriptionText.text = "\n신입생들의 첫 전장이 되는 기숙사 스테이지입니다. \n입시보다 기숙사 입주가 더 어렵다는 소문이 있습니다. \n\n전투의 기초를 배울 수 있는 스테이지입니다. \n(난이도☆☆☆☆☆)";
                 break;
 
             case 2:
                 stageTitleText.text = "백년관";
-                stageDescriptionText.text = "백년관입니다.백년관입니다.백년관입니다.백년관입니다.백년관입니다.";
+                stageDescriptionText.text = "\n기후변화융합학과 학생들의 본진인 백년관입니다. \n기상과 환경을 탐구하는 학생들의 열정이 가득한 곳입니다. \n\n우산이 없어서 비를 맞는 학생들이 많긴 하지만요. \n\n(난이도★☆☆☆☆)";
                 break;
 
             case 3:
                 stageTitleText.text = "자연과학관";
-                stageDescriptionText.text = "자연과학관입니다.자연과학관입니다.자연과학관입니다.자연과학관입니다.자연과학관입니다.";
+                stageDescriptionText.text = "\n화학과 학생들의 본진인 자연과학관입니다. \n실험과 연구가 끊이지 않는 과학의 요람입니다. \n\n(난이도★★☆☆☆)";
                 break;
 
             case 4:
                 stageTitleText.text = "공학관";
-                stageDescriptionText.text = "공학관입니다.공학관입니다.공학관입니다.공학관입니다.공학관입니다.공학관입니다.";
+                stageDescriptionText.text = "\n컴퓨터공학과 학생들의 본진인 공학관입니다. \n수많은 아이디어와 코드가 탄생하는 개발의 중심지 입니다. \n\n가끔 버그를 못잡는 본인이 버그인지 헷갈리기도 합니다. \n\n(난이도★★★☆☆)";
                 break;
 
             case 5:
                 stageTitleText.text = "교양관";
-                stageDescriptionText.text = "교양관입니다.교양관입니다.교양관입니다.교양관입니다.";
+                stageDescriptionText.text = "\n글스산학과 학생들의 본진인 교양관입니다. \n한국 스포츠의 미래를 준비하는 학생들이 모여 있습니다. \n\n(난이도★★★★☆)";
                 break;
 
             case 6:
                 stageTitleText.text = "어문학관";
-                stageDescriptionText.text = "어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.어문학관입니다.";
+                stageDescriptionText.text = "\n통번역과 학생들의 본진인 어문학관입니다. \n다양한 언어와 문화가 교류하는 소통의 공간입니다. \n\n비속어로 말이죠... \n\n(난이도★★★★★)";
                 break;
         }
     }
