@@ -158,7 +158,7 @@ public class UpgradeSceneScript : MonoBehaviour
     //컴공과 유닛 선택
     public void MeleeUnitBtnClick()
     {
-        unitDescriptionText.text = "컴공과 유닛입니다.";
+        unitDescriptionText.text = "균형잡힌 성능의 컴퓨터공학과 유닛입니다. \n저렴한 비용으로 빠르게 전선을 형성할 수 있습니다.";
         unitScript.ChangeAnimation(meleeUnitSprites);
         SetUnitStat(UnitType.ComputerScience);
     }
@@ -166,7 +166,7 @@ public class UpgradeSceneScript : MonoBehaviour
     //글스산 유닛 선택
     public void TankUnitBtnClick()
     {
-        unitDescriptionText.text = "글스산 유닛입니다.";
+        unitDescriptionText.text = "전열을 담당하는 글로벌스포츠산업학과 유닛입니다. \n높은 체력으로 적의 공격을 버티며 아군을 보호합니다.";
         unitScript.ChangeAnimation(tankUnitSprites);
         SetUnitStat(UnitType.GlobalSports);
     }
@@ -174,7 +174,7 @@ public class UpgradeSceneScript : MonoBehaviour
     //기후학과 유닛 선택
     public void RangedUnitBtnClick()
     {
-        unitDescriptionText.text = "기후학과 유닛입니다.";
+        unitDescriptionText.text = "지원 사격을 담당하는 기후변화융합학과 유닛입니다. \n안전한 거리에서 지속적으로 공격을 해줍니다.";
         unitScript.ChangeAnimation(rangedUnitSprites);
         SetUnitStat(UnitType.Climate);
     }
@@ -182,7 +182,7 @@ public class UpgradeSceneScript : MonoBehaviour
     //화학과 유닛 선택
     public void DamageUnitBtnClick()
     {
-        unitDescriptionText.text = "화학과 유닛입니다.";
+        unitDescriptionText.text = "화력을 담당하는 화학과 유닛입니다. \n 체력은 낮지만 다중 공격으로 적들을 빠르게 제압합니다.";
         unitScript.ChangeAnimation(damageUnitSprites);
         SetUnitStat(UnitType.Chemistry);
     }
@@ -190,7 +190,7 @@ public class UpgradeSceneScript : MonoBehaviour
     //통번역과 유닛 선택
     public void HealerUnitBtnClick()
     {
-        unitDescriptionText.text = "통번역과 유닛입니다.";
+        unitDescriptionText.text = "전장을 지원하는 통번역학과 유닛입니다. \n부상당한 아군을 치유하여 전선 유지에 기여합니다.";
         unitScript.ChangeAnimation(healerUnitSprites);
         SetUnitStat(UnitType.Interpretation);
     }
