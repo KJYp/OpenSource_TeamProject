@@ -91,9 +91,31 @@ public class UpgradeSceneScript : MonoBehaviour
             afterAPImage.sprite = APSprite[0];
         }
 
+        if (UnitUpgradeState.Instance == null || UnitBalanceDatabase.Instance == null)
+        {
+            Debug.LogError("UnitUpgradeState 또는 UnitBalanceDatabase Instance가 없습니다.");
+            return;
+        }
+
         int grade = UnitUpgradeState.Instance.GetGrade(unit);
+
         UnitGradeStats currentStats = UnitBalanceDatabase.Instance.GetStats(unit, grade);
-        UnitGradeStats upgradeStats = grade == 4 ? currentStats : UnitBalanceDatabase.Instance.GetStats(unit, grade+1);
+
+        if (currentStats == null)
+        {
+            Debug.LogError($"{unit} {grade}학년 스탯 데이터를 찾을 수 없습니다.");
+            return;
+        }
+
+        UnitGradeStats upgradeStats = grade == 4
+            ? currentStats
+            : UnitBalanceDatabase.Instance.GetStats(unit, grade + 1);
+
+        if (upgradeStats == null)
+        {
+            Debug.LogError($"{unit} {grade + 1}학년 스탯 데이터를 찾을 수 없습니다.");
+            return;
+        }
 
 
         beforeUpgradeHPText.text = currentStats.maxHp.ToString();
