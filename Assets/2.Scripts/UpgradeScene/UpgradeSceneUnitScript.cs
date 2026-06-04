@@ -8,17 +8,24 @@ public class UpgradeSceneUnitScript : MonoBehaviour
 
     [Header("Animation Sprites")]
     public Sprite[] currentSprites;
-    
+
     [Header("Animation")]
-    public float animationSpeed = 1.5f;
+    public float animationSpeed = 0.2f;
 
     private int spriteIndex = 0;
     private float timer = 0f;
 
-    void Update()
+    private void Update()
     {
-        if (currentSprites.Length == 0)
+        if (previewImage == null)
+        {
             return;
+        }
+
+        if (currentSprites == null || currentSprites.Length == 0)
+        {
+            return;
+        }
 
         timer += Time.deltaTime;
 
@@ -40,8 +47,20 @@ public class UpgradeSceneUnitScript : MonoBehaviour
     public void ChangeAnimation(Sprite[] newSprites)
     {
         currentSprites = newSprites;
-
         spriteIndex = 0;
+        timer = 0f;
+
+        if (previewImage == null)
+        {
+            Debug.LogWarning("Preview Image가 연결되지 않았습니다.");
+            return;
+        }
+
+        if (currentSprites == null || currentSprites.Length == 0)
+        {
+            previewImage.sprite = null;
+            return;
+        }
 
         previewImage.sprite = currentSprites[0];
     }

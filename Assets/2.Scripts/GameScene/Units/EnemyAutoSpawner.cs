@@ -21,11 +21,31 @@ public class EnemyAutoSpawner : MonoBehaviour
 
     private Coroutine spawnCoroutine;
 
+    private void Awake()
+    {
+        TryConnectBalanceDatabase();
+    }
+
     private void Start()
     {
+        TryConnectBalanceDatabase();
+
         if (spawnOnStart)
         {
             StartAutoSpawn();
+        }
+    }
+
+    private void TryConnectBalanceDatabase()
+    {
+        if (balanceDatabase == null)
+        {
+            balanceDatabase = UnitBalanceDatabase.Instance;
+        }
+
+        if (balanceDatabase == null)
+        {
+            Debug.LogWarning("EnemyAutoSpawner가 UnitBalanceDatabase를 찾지 못했습니다. MainScene의 GlobalGameData를 확인하세요.");
         }
     }
 
@@ -101,21 +121,32 @@ public class EnemyAutoSpawner : MonoBehaviour
 
         unitStats.team = UnitTeam.Enemy;
 
-        if (balanceDatabase != null)
+        if (balanceDatabase == null)
         {
-            UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, enemyGrade);
+            TryConnectBalanceDatabase();
+        }
 
-            if (data != null)
-            {
-                unitStats.ApplyBalanceData(data);
+        if (balanceDatabase == null)
+        {
+            Debug.LogError("UnitBalanceDatabase가 없어 적 유닛 스탯을 적용하지 못했습니다.");
+            return;
+        }
 
-                UnitHealth unitHealth = enemyObject.GetComponent<UnitHealth>();
+        UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, enemyGrade);
 
-                if (unitHealth != null)
-                {
-                    unitHealth.ResetHealthToMax();
-                }
-            }
+        if (data == null)
+        {
+            Debug.LogWarning($"{unitStats.unitType} {enemyGrade}학년 적 유닛 스탯 데이터를 찾지 못했습니다.");
+            return;
+        }
+
+        unitStats.ApplyBalanceData(data);
+
+        UnitHealth unitHealth = enemyObject.GetComponent<UnitHealth>();
+
+        if (unitHealth != null)
+        {
+            unitHealth.ResetHealthToMax();
         }
 
         Debug.Log($"{unitStats.unitType} 적 유닛 {enemyGrade}학년 생성");

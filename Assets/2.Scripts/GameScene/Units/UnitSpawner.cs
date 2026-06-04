@@ -64,6 +64,8 @@ public class UnitSpawner : MonoBehaviour
 
     private void ApplyUpgradeStats(UnitStats unitStats)
     {
+        TryConnectData();
+
         if (balanceDatabase == null || upgradeState == null)
         {
             Debug.LogWarning("BalanceDatabase 또는 UpgradeState가 UnitSpawner에 연결되지 않았습니다.");
@@ -76,6 +78,7 @@ public class UnitSpawner : MonoBehaviour
 
         if (data == null)
         {
+            Debug.LogWarning($"{unitStats.unitType} {currentGrade}학년 스탯 데이터를 찾지 못했습니다.");
             return;
         }
 
@@ -91,5 +94,37 @@ public class UnitSpawner : MonoBehaviour
         Debug.Log($"{unitStats.unitType} {currentGrade}학년 스탯 적용 완료");
     }
 
+    private void TryConnectData()
+    {
+        if (balanceDatabase == null)
+        {
+            balanceDatabase = UnitBalanceDatabase.Instance;
+        }
+
+        if (upgradeState == null)
+        {
+            upgradeState = UnitUpgradeState.Instance;
+        }
+
+        if (balanceDatabase == null)
+        {
+            Debug.LogWarning("UnitSpawner가 UnitBalanceDatabase를 찾지 못했습니다.");
+        }
+
+        if (upgradeState == null)
+        {
+            Debug.LogWarning("UnitSpawner가 UnitUpgradeState를 찾지 못했습니다.");
+        }
+    }
+
+    private void Awake()
+    {
+        TryConnectData();
+    }
+
+    private void Start()
+    {
+        TryConnectData();
+    }
 
 }
