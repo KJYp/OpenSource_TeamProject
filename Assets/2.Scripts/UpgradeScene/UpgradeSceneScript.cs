@@ -160,6 +160,8 @@ public class UpgradeSceneScript : MonoBehaviour
             return;
         }
 
+        UnitGradeStats upgradeStats = grade == 4 ? currentStats : UnitBalanceDatabase.Instance.GetStats(unit, grade + 1);
+
 
         beforeUpgradeHPText.text = currentStats.maxHp.ToString();
         beforeUpgradeAPText.text = unit == UnitType.Interpretation ? currentStats.healPower.ToString() : currentStats.attackPower.ToString();
@@ -173,25 +175,25 @@ public class UpgradeSceneScript : MonoBehaviour
         afterUpgradeMSText.text = upgradeStats.moveSpeed.ToString();
         afterUpgradeMCText.text = upgradeStats.manaCost.ToString();
 
-        unitUpgradeGoldText.text = grade >= 4 ? "MAX" : currentStats.upgradeCost.ToString();
+        unitUpgradeGoldText.text = currentStats.upgradeCost.ToString();
         unitType = unit;
     }
 
     public void UpgradeBtnClick()
     {
-        if (!int.TryParse(unitUpgradeGoldText.text, out int upgradeGold))
+        int upgradeGold = int.Parse(unitUpgradeGoldText.text);
 
-            if (goldManager != null && goldManager.UseGold(upgradeGold))
-            {
-                UnitUpgradeState.Instance.UpgradeGrade(unitType);
+        if (goldManager != null && goldManager.UseGold(upgradeGold))
+        {
+            UnitUpgradeState.Instance.UpgradeGrade(unitType);
 
-                SetUnitStat(unitType);
-                UpdateGoldUI();
-            }
-            else
-            {
-                Debug.Log("��� ����");
-            }
+            SetUnitStat(unitType);
+            UpdateGoldUI();
+        }
+        else
+        {
+            Debug.Log("��� ����");
+        }
     }
 
     public void MeleeUnitBtnClick()
@@ -211,6 +213,9 @@ public class UpgradeSceneScript : MonoBehaviour
 
         unitDescriptionText.text = "������ ����ϴ� �۷ι�����������а� �����Դϴ�. \n���� ü������ ���� ������ ��Ƽ�� �Ʊ��� ��ȣ�մϴ�.";
         unitScript.ChangeAnimation(tankUnitSprites);
+
+        unitDescriptionText.text = "�۽��� �����Դϴ�.";
+        ChangeUnitAnimation(tankUnitSprites); // [����] ���� �Լ� ���
 
         SetUnitStat(UnitType.GlobalSports);
     }
@@ -248,4 +253,3 @@ public class UpgradeSceneScript : MonoBehaviour
         SetUnitStat(UnitType.Interpretation);
     }
 }
-
