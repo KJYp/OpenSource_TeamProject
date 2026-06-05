@@ -9,9 +9,6 @@ public class UpgradeSceneScript : MonoBehaviour
 
     public UpgradeSceneUnitScript unitScript;
 
-    public GoldManager goldManager;
-    public TMP_Text currentGoldText;
-
     public GameObject hidePanel;
     public GameObject[] unitPrefabs;
 
@@ -40,7 +37,6 @@ public class UpgradeSceneScript : MonoBehaviour
     public Sprite[] rangedUnitSprites;
     public Sprite[] damageUnitSprites;
     public Sprite[] healerUnitSprites;
-
     void Start()
     {
         Time.timeScale = 1f;
@@ -48,7 +44,8 @@ public class UpgradeSceneScript : MonoBehaviour
         PlayerPrefs.SetInt("isMainPanel", 1);
         PlayerPrefs.Save();
 
-        SetAPSprite(false); // [ï¿½ï¿½ï¿½ï¿½] APSprite[0] ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
+        beforeAPImage.sprite = APSprite[0];
+        afterAPImage.sprite = APSprite[0];
 
         beforeUpgradeHPText.text = "0";
         beforeUpgradeAPText.text = "0";
@@ -63,62 +60,17 @@ public class UpgradeSceneScript : MonoBehaviour
         afterUpgradeMCText.text = "0";
 
         unitUpgradeGoldText.text = "0";
+        unitScript.ChangeAnimation(emptyImage);
 
-        if (unitScript != null && emptyImage != null && emptyImage.Length > 0) // [ï¿½ï¿½ï¿½ï¿½] ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
-        {
-            unitScript.ChangeAnimation(emptyImage);
-        }
-
-        if (hidePanel != null) // [ï¿½ß°ï¿½] null ï¿½ï¿½ï¿½
-        {
-            hidePanel.SetActive(true);
-        }
-
-        UpdateGoldUI();
+        hidePanel.SetActive(true);
     }
 
     void Update()
     {
+        
     }
 
-    void UpdateGoldUI()
-    {
-        if (goldManager != null && currentGoldText != null)
-        {
-            currentGoldText.text = goldManager.currentGold.ToString();
-        }
-    }
-
-    void SetAPSprite(bool isHealer) // [ï¿½ß°ï¿½] APSprite ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
-    {
-        if (APSprite == null || APSprite.Length == 0) return;
-
-        int index = isHealer ? 1 : 0;
-
-        if (index >= APSprite.Length) // [ï¿½ß°ï¿½] 1ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
-        {
-            index = 0;
-        }
-
-        if (beforeAPImage != null)
-        {
-            beforeAPImage.sprite = APSprite[index];
-        }
-
-        if (afterAPImage != null)
-        {
-            afterAPImage.sprite = APSprite[index];
-        }
-    }
-
-    void ChangeUnitAnimation(Sprite[] sprites) // [ï¿½ß°ï¿½] ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
-    {
-        if (unitScript != null && sprites != null && sprites.Length > 0)
-        {
-            unitScript.ChangeAnimation(sprites);
-        }
-    }
-
+    //µÚ·Î°¡±â ¹öÆ°
     public void BackBtnClick()
     {
         SceneManager.LoadScene("MainScene");
@@ -126,16 +78,22 @@ public class UpgradeSceneScript : MonoBehaviour
 
     public void SetUnitStat(UnitType unit)
     {
-        if (hidePanel != null) // [ï¿½ß°ï¿½] null ï¿½ï¿½ï¿½
-        {
-            hidePanel.SetActive(false);
-        }
+        hidePanel.SetActive(false);
 
-        SetAPSprite(unit == UnitType.Interpretation); // [ï¿½ï¿½ï¿½ï¿½] APSprite ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (unit == UnitType.Interpretation)
+        {
+            beforeAPImage.sprite = APSprite[1];
+            afterAPImage.sprite = APSprite[1];
+        }
+        else
+        {
+            beforeAPImage.sprite = APSprite[0];
+            afterAPImage.sprite = APSprite[0];
+        }
 
         if (UnitUpgradeState.Instance == null || UnitBalanceDatabase.Instance == null)
         {
-            Debug.LogError("UnitUpgradeState ï¿½Ç´ï¿½ UnitBalanceDatabase Instanceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+            Debug.LogError("UnitUpgradeState ¶Ç´Â UnitBalanceDatabase Instance°¡ ¾ø½À´Ï´Ù.");
             return;
         }
 
@@ -143,10 +101,9 @@ public class UpgradeSceneScript : MonoBehaviour
 
         UnitGradeStats currentStats = UnitBalanceDatabase.Instance.GetStats(unit, grade);
 
-
         if (currentStats == null)
         {
-            Debug.LogError($"{unit} {grade}ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+            Debug.LogError($"{unit} {grade}ÇÐ³â ½ºÅÈ µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
             return;
         }
 
@@ -156,11 +113,9 @@ public class UpgradeSceneScript : MonoBehaviour
 
         if (upgradeStats == null)
         {
-            Debug.LogError($"{unit} {grade + 1}ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+            Debug.LogError($"{unit} {grade + 1}ÇÐ³â ½ºÅÈ µ¥ÀÌÅÍ¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
             return;
         }
-
-        UnitGradeStats upgradeStats = grade == 4 ? currentStats : UnitBalanceDatabase.Instance.GetStats(unit, grade + 1);
 
 
         beforeUpgradeHPText.text = currentStats.maxHp.ToString();
@@ -169,87 +124,74 @@ public class UpgradeSceneScript : MonoBehaviour
         beforeUpgradeMSText.text = currentStats.moveSpeed.ToString();
         beforeUpgradeMCText.text = currentStats.manaCost.ToString();
 
+        
         afterUpgradeHPText.text = upgradeStats.maxHp.ToString();
         afterUpgradeAPText.text = unit == UnitType.Interpretation ? upgradeStats.healPower.ToString() : upgradeStats.attackPower.ToString();
         afterUpgradeACText.text = upgradeStats.attackCooldown.ToString();
         afterUpgradeMSText.text = upgradeStats.moveSpeed.ToString();
         afterUpgradeMCText.text = upgradeStats.manaCost.ToString();
 
+        
         unitUpgradeGoldText.text = currentStats.upgradeCost.ToString();
         unitType = unit;
     }
 
     public void UpgradeBtnClick()
     {
+        int currentGold = 500;
         int upgradeGold = int.Parse(unitUpgradeGoldText.text);
 
-        if (goldManager != null && goldManager.UseGold(upgradeGold))
+        if (currentGold >= upgradeGold)
         {
+            currentGold -= upgradeGold;
+
             UnitUpgradeState.Instance.UpgradeGrade(unitType);
 
             SetUnitStat(unitType);
-            UpdateGoldUI();
-        }
+        } 
         else
         {
-            Debug.Log("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+            Debug.Log("¿¨?");
         }
     }
 
+    //ÄÄ°ø°ú À¯´Ö ¼±ÅÃ
     public void MeleeUnitBtnClick()
     {
-
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç»ï¿½Í°ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.";
+        unitDescriptionText.text = "±ÕÇüÀâÈù ¼º´ÉÀÇ ÄÄÇ»ÅÍ°øÇÐ°ú À¯´ÖÀÔ´Ï´Ù. \nÀú·ÅÇÑ ºñ¿ëÀ¸·Î ºü¸£°Ô Àü¼±À» Çü¼ºÇÒ ¼ö ÀÖ½À´Ï´Ù.";
         unitScript.ChangeAnimation(meleeUnitSprites);
-
-        unitDescriptionText.text = "ï¿½Ä°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
-        ChangeUnitAnimation(meleeUnitSprites); // [ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
-
         SetUnitStat(UnitType.ComputerScience);
     }
 
+    //±Û½º»ê À¯´Ö ¼±ÅÃ
     public void TankUnitBtnClick()
     {
-
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Û·Î¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \nï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½Æ±ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½Õ´Ï´ï¿½.";
+        unitDescriptionText.text = "Àü¿­À» ´ã´çÇÏ´Â ±Û·Î¹ú½ºÆ÷Ã÷»ê¾÷ÇÐ°ú À¯´ÖÀÔ´Ï´Ù. \n³ôÀº Ã¼·ÂÀ¸·Î ÀûÀÇ °ø°ÝÀ» ¹öÆ¼¸ç ¾Æ±ºÀ» º¸È£ÇÕ´Ï´Ù.";
         unitScript.ChangeAnimation(tankUnitSprites);
-
-        unitDescriptionText.text = "ï¿½Û½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
-        ChangeUnitAnimation(tankUnitSprites); // [ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
-
         SetUnitStat(UnitType.GlobalSports);
     }
 
+    //±âÈÄÇÐ°ú À¯´Ö ¼±ÅÃ
     public void RangedUnitBtnClick()
     {
-
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Äºï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý´Ï´ï¿½.";
+        unitDescriptionText.text = "Áö¿ø »ç°ÝÀ» ´ã´çÇÏ´Â ±âÈÄº¯È­À¶ÇÕÇÐ°ú À¯´ÖÀÔ´Ï´Ù. \n¾ÈÀüÇÑ °Å¸®¿¡¼­ Áö¼ÓÀûÀ¸·Î °ø°ÝÀ» ÇØÁÝ´Ï´Ù.";
         unitScript.ChangeAnimation(rangedUnitSprites);
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
-        ChangeUnitAnimation(rangedUnitSprites); // [ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
-
         SetUnitStat(UnitType.Climate);
     }
 
+    //È­ÇÐ°ú À¯´Ö ¼±ÅÃ
     public void DamageUnitBtnClick()
     {
-
-        unitDescriptionText.text = "È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ È­ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \n Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.";
+        unitDescriptionText.text = "È­·ÂÀ» ´ã´çÇÏ´Â È­ÇÐ°ú À¯´ÖÀÔ´Ï´Ù. \n Ã¼·ÂÀº ³·Áö¸¸ ´ÙÁß °ø°ÝÀ¸·Î ÀûµéÀ» ºü¸£°Ô Á¦¾ÐÇÕ´Ï´Ù.";
         unitScript.ChangeAnimation(damageUnitSprites);
-        unitDescriptionText.text = "È­ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
-        ChangeUnitAnimation(damageUnitSprites); // [ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
-
         SetUnitStat(UnitType.Chemistry);
     }
 
+    //Åë¹ø¿ª°ú À¯´Ö ¼±ÅÃ
     public void HealerUnitBtnClick()
     {
-
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. \nï¿½Î»ï¿½ï¿½ï¿½ï¿½ ï¿½Æ±ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½â¿©ï¿½Õ´Ï´ï¿½.";
+        unitDescriptionText.text = "ÀüÀåÀ» Áö¿øÇÏ´Â Åë¹ø¿ªÇÐ°ú À¯´ÖÀÔ´Ï´Ù. \nºÎ»ó´çÇÑ ¾Æ±ºÀ» Ä¡À¯ÇÏ¿© Àü¼± À¯Áö¿¡ ±â¿©ÇÕ´Ï´Ù.";
         unitScript.ChangeAnimation(healerUnitSprites);
-        unitDescriptionText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.";
-        ChangeUnitAnimation(healerUnitSprites); // [ï¿½ï¿½ï¿½ï¿½] ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½
-
         SetUnitStat(UnitType.Interpretation);
     }
 }
