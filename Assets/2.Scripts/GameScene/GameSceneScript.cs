@@ -121,17 +121,17 @@ public class GameSceneScript : MonoBehaviour
         switch (stageParam)
         {
             case 1: // 튜토리얼(기숙사)
-                currentMana = 300; maxMana = 600; manaRegenRate = 20; break;
+                currentMana = 300; maxMana = 600; manaRegenRate = 25; break;
             case 2: // 1단계(백년관)
-                currentMana = 350; maxMana = 700; manaRegenRate = 22; break;
+                currentMana = 350; maxMana = 700; manaRegenRate = 29; break;
             case 3: // 2단계(자연과학관)
-                currentMana = 400; maxMana = 800; manaRegenRate = 24; break;
+                currentMana = 400; maxMana = 800; manaRegenRate = 33; break;
             case 4: // 3단계(공학관)
-                currentMana = 450; maxMana = 900; manaRegenRate = 26; break;
+                currentMana = 450; maxMana = 900; manaRegenRate = 37; break;
             case 5: // 4단계(교양관)
-                currentMana = 500; maxMana = 1000; manaRegenRate = 28; break;
+                currentMana = 500; maxMana = 1000; manaRegenRate = 41; break;
             case 6: // 5단계(어문관)
-                currentMana = 550; maxMana = 1100; manaRegenRate = 30; break;
+                currentMana = 550; maxMana = 1100; manaRegenRate = 45; break;
         }
         UpdateMana();
     }
