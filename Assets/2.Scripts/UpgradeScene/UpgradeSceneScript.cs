@@ -6,11 +6,12 @@ using TMPro;
 public class UpgradeSceneScript : MonoBehaviour
 {
     public UnitType unitType;
-
     public UpgradeSceneUnitScript unitScript;
 
     public GameObject hidePanel;
     public GameObject[] unitPrefabs;
+
+    public TMP_Text currentGoldText;
 
     public TMP_Text beforeUpgradeHPText;
     public TMP_Text beforeUpgradeAPText;
@@ -37,6 +38,7 @@ public class UpgradeSceneScript : MonoBehaviour
     public Sprite[] rangedUnitSprites;
     public Sprite[] damageUnitSprites;
     public Sprite[] healerUnitSprites;
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -63,14 +65,17 @@ public class UpgradeSceneScript : MonoBehaviour
         unitScript.ChangeAnimation(emptyImage);
 
         hidePanel.SetActive(true);
+        UpdateGoldUI();
     }
 
-    void Update()
+    void UpdateGoldUI()
     {
-        
+        if (GoldManager.Instance != null)
+        {
+            currentGoldText.text = GoldManager.Instance.CurrentGold.ToString();
+        }
     }
 
-    //뒤로가기 버튼
     public void BackBtnClick()
     {
         SceneManager.LoadScene("MainScene");
@@ -98,25 +103,12 @@ public class UpgradeSceneScript : MonoBehaviour
         }
 
         int grade = UnitUpgradeState.Instance.GetGrade(unit);
-
         UnitGradeStats currentStats = UnitBalanceDatabase.Instance.GetStats(unit, grade);
 
-        if (currentStats == null)
-        {
-            Debug.LogError($"{unit} {grade}학년 스탯 데이터를 찾을 수 없습니다.");
-            return;
-        }
+        if (currentStats == null) return;
 
-        UnitGradeStats upgradeStats = grade == 4
-            ? currentStats
-            : UnitBalanceDatabase.Instance.GetStats(unit, grade + 1);
-
-        if (upgradeStats == null)
-        {
-            Debug.LogError($"{unit} {grade + 1}학년 스탯 데이터를 찾을 수 없습니다.");
-            return;
-        }
-
+        UnitGradeStats upgradeStats = grade == 4 ? currentStats : UnitBalanceDatabase.Instance.GetStats(unit, grade + 1);
+        if (upgradeStats == null) return;
 
         beforeUpgradeHPText.text = currentStats.maxHp.ToString();
         beforeUpgradeAPText.text = unit == UnitType.Interpretation ? currentStats.healPower.ToString() : currentStats.attackPower.ToString();
@@ -124,38 +116,49 @@ public class UpgradeSceneScript : MonoBehaviour
         beforeUpgradeMSText.text = currentStats.moveSpeed.ToString();
         beforeUpgradeMCText.text = currentStats.manaCost.ToString();
 
-        
         afterUpgradeHPText.text = upgradeStats.maxHp.ToString();
         afterUpgradeAPText.text = unit == UnitType.Interpretation ? upgradeStats.healPower.ToString() : upgradeStats.attackPower.ToString();
         afterUpgradeACText.text = upgradeStats.attackCooldown.ToString();
         afterUpgradeMSText.text = upgradeStats.moveSpeed.ToString();
         afterUpgradeMCText.text = upgradeStats.manaCost.ToString();
 
-        
-        unitUpgradeGoldText.text = currentStats.upgradeCost.ToString();
+        // ★ 변경점: 4학년일 때는 가격 대신 MAX 표시
+        if (grade >= 4)
+        {
+            unitUpgradeGoldText.text = "MAX";
+        }
+        else
+        {
+            unitUpgradeGoldText.text = currentStats.upgradeCost.ToString();
+        }
+
         unitType = unit;
     }
 
     public void UpgradeBtnClick()
     {
-        int currentGold = 500;
+        // ★ 변경점: 4학년이면 업그레이드 중단
+        int currentGrade = UnitUpgradeState.Instance.GetGrade(unitType);
+        if (currentGrade >= 4)
+        {
+            Debug.Log("이미 최고 학년(4학년)입니다!");
+            return;
+        }
+
         int upgradeGold = int.Parse(unitUpgradeGoldText.text);
 
-        if (currentGold >= upgradeGold)
+        if (GoldManager.Instance != null && GoldManager.Instance.UseGold(upgradeGold))
         {
-            currentGold -= upgradeGold;
-
             UnitUpgradeState.Instance.UpgradeGrade(unitType);
-
             SetUnitStat(unitType);
-        } 
+            UpdateGoldUI();
+        }
         else
         {
-            Debug.Log("엥?");
+            Debug.Log("골드 부족");
         }
     }
 
-    //컴공과 유닛 선택
     public void MeleeUnitBtnClick()
     {
         unitDescriptionText.text = "균형잡힌 성능의 컴퓨터공학과 유닛입니다. \n저렴한 비용으로 빠르게 전선을 형성할 수 있습니다.";
@@ -163,7 +166,6 @@ public class UpgradeSceneScript : MonoBehaviour
         SetUnitStat(UnitType.ComputerScience);
     }
 
-    //글스산 유닛 선택
     public void TankUnitBtnClick()
     {
         unitDescriptionText.text = "전열을 담당하는 글로벌스포츠산업학과 유닛입니다. \n높은 체력으로 적의 공격을 버티며 아군을 보호합니다.";
@@ -171,7 +173,6 @@ public class UpgradeSceneScript : MonoBehaviour
         SetUnitStat(UnitType.GlobalSports);
     }
 
-    //기후학과 유닛 선택
     public void RangedUnitBtnClick()
     {
         unitDescriptionText.text = "지원 사격을 담당하는 기후변화융합학과 유닛입니다. \n안전한 거리에서 지속적으로 공격을 해줍니다.";
@@ -179,7 +180,6 @@ public class UpgradeSceneScript : MonoBehaviour
         SetUnitStat(UnitType.Climate);
     }
 
-    //화학과 유닛 선택
     public void DamageUnitBtnClick()
     {
         unitDescriptionText.text = "화력을 담당하는 화학과 유닛입니다. \n 체력은 낮지만 다중 공격으로 적들을 빠르게 제압합니다.";
@@ -187,7 +187,6 @@ public class UpgradeSceneScript : MonoBehaviour
         SetUnitStat(UnitType.Chemistry);
     }
 
-    //통번역과 유닛 선택
     public void HealerUnitBtnClick()
     {
         unitDescriptionText.text = "전장을 지원하는 통번역학과 유닛입니다. \n부상당한 아군을 치유하여 전선 유지에 기여합니다.";

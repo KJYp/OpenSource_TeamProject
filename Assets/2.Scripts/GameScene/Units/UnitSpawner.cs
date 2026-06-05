@@ -12,31 +12,47 @@ public class UnitSpawner : MonoBehaviour
     [Header("Spawn Point")]
     public Transform allySpawnPoint;
 
-    public void SpawnMelee()
+    [Header("Game Scene Script")]
+    public GameSceneScript gameSceneScript;
+
+    // ==========================================
+    // ★ 버튼 클릭 시 마나를 검사하고 소환하는 로직 
+    // 기획안 수치 적용 완료!
+    // ==========================================
+
+    public void SpawnMelee() // 컴공과 (120)
     {
+        if (gameSceneScript != null && !gameSceneScript.UseMana(120)) return;
         SpawnUnit(meleeUnitPrefab);
     }
 
-    public void SpawnTank()
+    public void SpawnTank() // 글스산 (180)
     {
+        if (gameSceneScript != null && !gameSceneScript.UseMana(180)) return;
         SpawnUnit(tankUnitPrefab);
     }
 
-    public void SpawnRanged()
+    public void SpawnRanged() // 기후학과 (140)
     {
+        if (gameSceneScript != null && !gameSceneScript.UseMana(140)) return;
         SpawnUnit(rangedUnitPrefab);
     }
 
-    public void SpawnHealer()
+    public void SpawnHealer() // 통번역학과 (170)
     {
+        if (gameSceneScript != null && !gameSceneScript.UseMana(170)) return;
         SpawnUnit(healerUnitPrefab);
     }
 
-    public void SpawnDamage()
+    public void SpawnDamage() // 화학과 (155)
     {
+        if (gameSceneScript != null && !gameSceneScript.UseMana(155)) return;
         SpawnUnit(damageUnitPrefab);
     }
 
+    // ==========================================
+
+    // 실제 유닛 생성 로직 (마나 검사는 위에서 끝났으므로 여기선 생성만 함)
     public void SpawnUnit(GameObject prefab)
     {
         if (prefab == null || allySpawnPoint == null)
@@ -46,7 +62,6 @@ public class UnitSpawner : MonoBehaviour
         }
 
         GameObject unitObject = Instantiate(prefab, allySpawnPoint.position, Quaternion.identity);
-
         UnitStats unitStats = unitObject.GetComponent<UnitStats>();
 
         if (unitStats == null)
@@ -58,6 +73,18 @@ public class UnitSpawner : MonoBehaviour
         ApplyUpgradeStats(unitStats);
     }
 
+    public void SpawnUnit(GameObject prefab, int grade)
+    {
+        if (prefab == null || allySpawnPoint == null) return;
+
+        GameObject unitObject = Instantiate(prefab, allySpawnPoint.position, Quaternion.identity);
+        UnitStats unitStats = unitObject.GetComponent<UnitStats>();
+
+        if (unitStats == null) return;
+
+        ApplyGradeStats(unitStats, grade);
+    }
+
     [Header("Data")]
     public UnitBalanceDatabase balanceDatabase;
     public UnitUpgradeState upgradeState;
@@ -66,65 +93,49 @@ public class UnitSpawner : MonoBehaviour
     {
         TryConnectData();
 
-        if (balanceDatabase == null || upgradeState == null)
-        {
-            Debug.LogWarning("BalanceDatabase 또는 UpgradeState가 UnitSpawner에 연결되지 않았습니다.");
-            return;
-        }
+        if (balanceDatabase == null || upgradeState == null) return;
 
         int currentGrade = upgradeState.GetGrade(unitStats.unitType);
-
         UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, currentGrade);
 
-        if (data == null)
-        {
-            Debug.LogWarning($"{unitStats.unitType} {currentGrade}학년 스탯 데이터를 찾지 못했습니다.");
-            return;
-        }
+        if (data == null) return;
 
         unitStats.ApplyBalanceData(data);
 
         UnitHealth unitHealth = unitStats.GetComponent<UnitHealth>();
+        if (unitHealth != null) unitHealth.ResetHealthToMax();
+    }
 
-        if (unitHealth != null)
-        {
-            unitHealth.ResetHealthToMax();
-        }
+    private void ApplyGradeStats(UnitStats unitStats, int grade)
+    {
+        TryConnectData();
 
-        Debug.Log($"{unitStats.unitType} {currentGrade}학년 스탯 적용 완료");
+        if (balanceDatabase == null) return;
+
+        UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, grade);
+
+        if (data == null) return;
+
+        unitStats.ApplyBalanceData(data);
+
+        UnitHealth unitHealth = unitStats.GetComponent<UnitHealth>();
+        if (unitHealth != null) unitHealth.ResetHealthToMax();
     }
 
     private void TryConnectData()
     {
-        if (balanceDatabase == null)
-        {
-            balanceDatabase = UnitBalanceDatabase.Instance;
-        }
-
-        if (upgradeState == null)
-        {
-            upgradeState = UnitUpgradeState.Instance;
-        }
-
-        if (balanceDatabase == null)
-        {
-            Debug.LogWarning("UnitSpawner가 UnitBalanceDatabase를 찾지 못했습니다.");
-        }
-
-        if (upgradeState == null)
-        {
-            Debug.LogWarning("UnitSpawner가 UnitUpgradeState를 찾지 못했습니다.");
-        }
+        if (balanceDatabase == null) balanceDatabase = UnitBalanceDatabase.Instance;
+        if (upgradeState == null) upgradeState = UnitUpgradeState.Instance;
     }
 
     private void Awake()
     {
         TryConnectData();
+        if (gameSceneScript == null) gameSceneScript = FindAnyObjectByType<GameSceneScript>();
     }
 
     private void Start()
     {
         TryConnectData();
     }
-
 }

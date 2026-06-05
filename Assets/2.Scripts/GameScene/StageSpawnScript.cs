@@ -17,6 +17,8 @@ public class StageSpawnScript : MonoBehaviour
         public float interval;
         // 다른 웨이브 시작 전 간격
         public float delay;
+        // 추가 : 학년
+        public int grade;
 
         //예시)
         //Element 0 근접유닛 count = 3 interval = 1 delay = 3
@@ -75,7 +77,7 @@ public class StageSpawnScript : MonoBehaviour
 
                 for (int i = 0; i < data.count; i++)
                 {
-                    unitSpawner.SpawnUnit(data.unitPrefab);
+                    unitSpawner.SpawnUnit(data.unitPrefab, data.grade);
 
                     yield return new WaitForSeconds(Mathf.Max(data.interval, 0.1f));
                 }

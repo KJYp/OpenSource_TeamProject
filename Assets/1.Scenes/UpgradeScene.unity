@@ -2767,6 +2767,7 @@ MonoBehaviour:
   - {fileID: 7524034082308197803, guid: f40da73c2e54e5c4da6da8df1fe0de7d, type: 3}
   - {fileID: 7524034082308197803, guid: 37f9dc1185d5e0b4395013eb3eb6502b, type: 3}
   - {fileID: 7524034082308197803, guid: 51765a12350fe4f4991a245783d1848e, type: 3}
+  currentGoldText: {fileID: 350531279}
   beforeUpgradeHPText: {fileID: 797081761}
   beforeUpgradeAPText: {fileID: 464323110}
   beforeUpgradeACText: {fileID: 449137385}

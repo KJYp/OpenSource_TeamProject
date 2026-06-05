@@ -2423,11 +2423,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7ddcca8209d2f42bcbeef8d6563b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitUpgradeState
-  computerScienceGrade: 4
-  climateGrade: 3
-  chemistryGrade: 2
-  globalSportsGrade: 2
-  interpretationGrade: 2
+  computerScienceGrade: 1
+  climateGrade: 1
+  chemistryGrade: 1
+  globalSportsGrade: 1
+  interpretationGrade: 1
 --- !u!1 &851188310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3118,6 +3118,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1844758240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1214086506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214086508}
+  - component: {fileID: 1214086507}
+  m_Layer: 0
+  m_Name: Goldmanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214086507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214086506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c453311ffa166be40967ad86cc138c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoldManager
+  currentGold: 0
+--- !u!4 &1214086508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214086506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.62373, y: -0.2773, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1228787169
 GameObject:
@@ -4576,3 +4621,4 @@ SceneRoots:
   - {fileID: 2063185717}
   - {fileID: 886498959}
   - {fileID: 791443251}
+  - {fileID: 1214086508}

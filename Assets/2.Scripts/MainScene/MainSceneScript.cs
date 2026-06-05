@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -102,7 +102,7 @@ public class MainSceneScript : MonoBehaviour
         }
     }
 
-    //°ÔÀÓ ¿£µùÁ¶°Ç È®ÀÎ
+    //ê²Œì„ ì—”ë”©ì¡°ê±´ í™•ì¸
     public bool IsClearGame()
     {
         bool stageClear_1 = PlayerPrefs.GetInt("stage1_clear", 0) == 1;
@@ -115,7 +115,7 @@ public class MainSceneScript : MonoBehaviour
         return stageClear_1 && stageClear_2 && stageClear_3 && stageClear_4 && stageClear_5 && stageClear_6;
     }
 
-    //startPanel ½ÃÀÛÇÏ±â ¹öÆ°
+    //startPanel ì‹œì‘í•˜ê¸° ë²„íŠ¼
     public void StartBtnClick()
     {
         startPanel.SetActive(false);
@@ -126,7 +126,7 @@ public class MainSceneScript : MonoBehaviour
         storyPlaying = true;
     }
 
-    //storyPanel Àå¸é ³Ñ±â±â
+    //storyPanel ì¥ë©´ ë„˜ê¸°ê¸°
     public void StoryNext()
     {
         storyIndex++;
@@ -145,7 +145,7 @@ public class MainSceneScript : MonoBehaviour
         }
     }
 
-    //tutorialPanel Àå¸é ³Ñ±â±â
+    //tutorialPanel ì¥ë©´ ë„˜ê¸°ê¸°
     public void TutorialNext()
     {
         tutorialIndex++;
@@ -162,7 +162,7 @@ public class MainSceneScript : MonoBehaviour
         }
     }
 
-    //endPanel Àå¸é ³Ñ±â±â
+    //endPanel ì¥ë©´ ë„˜ê¸°ê¸°
     public void EndingNext()
     {
         endingIndex++;
@@ -177,7 +177,7 @@ public class MainSceneScript : MonoBehaviour
         }
     }
 
-    //mainPanel °Ç¹° ¹öÆ°
+    //mainPanel ê±´ë¬¼ ë²„íŠ¼
     public void StageBtnClick(int n)
     {
         stageParameter = n;
@@ -186,44 +186,44 @@ public class MainSceneScript : MonoBehaviour
         switch(n)
         {
             case 1:
-                stageTitleText.text = "±â¼÷»ç";
-                stageDescriptionText.text = "\n½ÅÀÔ»ıµéÀÇ Ã¹ ÀüÀåÀÌ µÇ´Â ±â¼÷»ç ½ºÅ×ÀÌÁöÀÔ´Ï´Ù. \nÀÔ½Ãº¸´Ù ±â¼÷»ç ÀÔÁÖ°¡ ´õ ¾î·Æ´Ù´Â ¼Ò¹®ÀÌ ÀÖ½À´Ï´Ù. \n\nÀüÅõÀÇ ±âÃÊ¸¦ ¹è¿ï ¼ö ÀÖ´Â ½ºÅ×ÀÌÁöÀÔ´Ï´Ù. \n(³­ÀÌµµ¡Ù¡Ù¡Ù¡Ù¡Ù)";
+                stageTitleText.text = "ê¸°ìˆ™ì‚¬";
+                stageDescriptionText.text = "\nì‹ ì…ìƒë“¤ì˜ ì²« ì „ì¥ì´ ë˜ëŠ” ê¸°ìˆ™ì‚¬ ìŠ¤í…Œì´ì§€ì…ë‹ˆë‹¤. \nì…ì‹œë³´ë‹¤ ê¸°ìˆ™ì‚¬ ì…ì£¼ê°€ ë” ì–´ë µë‹¤ëŠ” ì†Œë¬¸ì´ ìˆìŠµë‹ˆë‹¤. \n\nì „íˆ¬ì˜ ê¸°ì´ˆë¥¼ ë°°ìš¸ ìˆ˜ ìˆëŠ” ìŠ¤í…Œì´ì§€ì…ë‹ˆë‹¤. \n(ë‚œì´ë„â˜†â˜†â˜†â˜†â˜†)";
                 break;
 
             case 2:
-                stageTitleText.text = "¹é³â°ü";
-                stageDescriptionText.text = "\n±âÈÄº¯È­À¶ÇÕÇĞ°ú ÇĞ»ıµéÀÇ º»ÁøÀÎ ¹é³â°üÀÔ´Ï´Ù. \n±â»ó°ú È¯°æÀ» Å½±¸ÇÏ´Â ÇĞ»ıµéÀÇ ¿­Á¤ÀÌ °¡µæÇÑ °÷ÀÔ´Ï´Ù. \n\n¿ì»êÀÌ ¾ø¾î¼­ ºñ¸¦ ¸Â´Â ÇĞ»ıµéÀÌ ¸¹±ä ÇÏÁö¸¸¿ä. \n\n(³­ÀÌµµ¡Ú¡Ù¡Ù¡Ù¡Ù)";
+                stageTitleText.text = "ë°±ë…„ê´€";
+                stageDescriptionText.text = "\nê¸°í›„ë³€í™”ìœµí•©í•™ê³¼ í•™ìƒë“¤ì˜ ë³¸ì§„ì¸ ë°±ë…„ê´€ì…ë‹ˆë‹¤. \nê¸°ìƒê³¼ í™˜ê²½ì„ íƒêµ¬í•˜ëŠ” í•™ìƒë“¤ì˜ ì—´ì •ì´ ê°€ë“í•œ ê³³ì…ë‹ˆë‹¤. \n\nìš°ì‚°ì´ ì—†ì–´ì„œ ë¹„ë¥¼ ë§ëŠ” í•™ìƒë“¤ì´ ë§ê¸´ í•˜ì§€ë§Œìš”. \n\n(ë‚œì´ë„â˜…â˜†â˜†â˜†â˜†)";
                 break;
 
             case 3:
-                stageTitleText.text = "ÀÚ¿¬°úÇĞ°ü";
-                stageDescriptionText.text = "\nÈ­ÇĞ°ú ÇĞ»ıµéÀÇ º»ÁøÀÎ ÀÚ¿¬°úÇĞ°üÀÔ´Ï´Ù. \n½ÇÇè°ú ¿¬±¸°¡ ²÷ÀÌÁö ¾Ê´Â °úÇĞÀÇ ¿ä¶÷ÀÔ´Ï´Ù. \n\n(³­ÀÌµµ¡Ú¡Ú¡Ù¡Ù¡Ù)";
+                stageTitleText.text = "ìì—°ê³¼í•™ê´€";
+                stageDescriptionText.text = "\ní™”í•™ê³¼ í•™ìƒë“¤ì˜ ë³¸ì§„ì¸ ìì—°ê³¼í•™ê´€ì…ë‹ˆë‹¤. \nì‹¤í—˜ê³¼ ì—°êµ¬ê°€ ëŠì´ì§€ ì•ŠëŠ” ê³¼í•™ì˜ ìš”ëŒì…ë‹ˆë‹¤. \n\n(ë‚œì´ë„â˜…â˜…â˜†â˜†â˜†)";
                 break;
 
             case 4:
-                stageTitleText.text = "°øÇĞ°ü";
-                stageDescriptionText.text = "\nÄÄÇ»ÅÍ°øÇĞ°ú ÇĞ»ıµéÀÇ º»ÁøÀÎ °øÇĞ°üÀÔ´Ï´Ù. \n¼ö¸¹Àº ¾ÆÀÌµğ¾î¿Í ÄÚµå°¡ Åº»ıÇÏ´Â °³¹ßÀÇ Áß½ÉÁö ÀÔ´Ï´Ù. \n\n°¡²û ¹ö±×¸¦ ¸øÀâ´Â º»ÀÎÀÌ ¹ö±×ÀÎÁö Çò°¥¸®±âµµ ÇÕ´Ï´Ù. \n\n(³­ÀÌµµ¡Ú¡Ú¡Ú¡Ù¡Ù)";
+                stageTitleText.text = "ê³µí•™ê´€";
+                stageDescriptionText.text = "\nì»´í“¨í„°ê³µí•™ê³¼ í•™ìƒë“¤ì˜ ë³¸ì§„ì¸ ê³µí•™ê´€ì…ë‹ˆë‹¤. \nìˆ˜ë§ì€ ì•„ì´ë””ì–´ì™€ ì½”ë“œê°€ íƒ„ìƒí•˜ëŠ” ê°œë°œì˜ ì¤‘ì‹¬ì§€ ì…ë‹ˆë‹¤. \n\nê°€ë” ë²„ê·¸ë¥¼ ëª»ì¡ëŠ” ë³¸ì¸ì´ ë²„ê·¸ì¸ì§€ í—·ê°ˆë¦¬ê¸°ë„ í•©ë‹ˆë‹¤. \n\n(ë‚œì´ë„â˜…â˜…â˜…â˜†â˜†)";
                 break;
 
             case 5:
-                stageTitleText.text = "±³¾ç°ü";
-                stageDescriptionText.text = "\n±Û½º»êÇĞ°ú ÇĞ»ıµéÀÇ º»ÁøÀÎ ±³¾ç°üÀÔ´Ï´Ù. \nÇÑ±¹ ½ºÆ÷Ã÷ÀÇ ¹Ì·¡¸¦ ÁØºñÇÏ´Â ÇĞ»ıµéÀÌ ¸ğ¿© ÀÖ½À´Ï´Ù. \n\n(³­ÀÌµµ¡Ú¡Ú¡Ú¡Ú¡Ù)";
+                stageTitleText.text = "êµì–‘ê´€";
+                stageDescriptionText.text = "\nê¸€ìŠ¤ì‚°í•™ê³¼ í•™ìƒë“¤ì˜ ë³¸ì§„ì¸ êµì–‘ê´€ì…ë‹ˆë‹¤. \ní•œêµ­ ìŠ¤í¬ì¸ ì˜ ë¯¸ë˜ë¥¼ ì¤€ë¹„í•˜ëŠ” í•™ìƒë“¤ì´ ëª¨ì—¬ ìˆìŠµë‹ˆë‹¤. \n\n(ë‚œì´ë„â˜…â˜…â˜…â˜…â˜†)";
                 break;
 
             case 6:
-                stageTitleText.text = "¾î¹®ÇĞ°ü";
-                stageDescriptionText.text = "\nÅë¹ø¿ª°ú ÇĞ»ıµéÀÇ º»ÁøÀÎ ¾î¹®ÇĞ°üÀÔ´Ï´Ù. \n´Ù¾çÇÑ ¾ğ¾î¿Í ¹®È­°¡ ±³·ùÇÏ´Â ¼ÒÅëÀÇ °ø°£ÀÔ´Ï´Ù. \n\nºñ¼Ó¾î·Î ¸»ÀÌÁÒ... \n\n(³­ÀÌµµ¡Ú¡Ú¡Ú¡Ú¡Ú)";
+                stageTitleText.text = "ì–´ë¬¸í•™ê´€";
+                stageDescriptionText.text = "\ní†µë²ˆì—­ê³¼ í•™ìƒë“¤ì˜ ë³¸ì§„ì¸ ì–´ë¬¸í•™ê´€ì…ë‹ˆë‹¤. \në‹¤ì–‘í•œ ì–¸ì–´ì™€ ë¬¸í™”ê°€ êµë¥˜í•˜ëŠ” ì†Œí†µì˜ ê³µê°„ì…ë‹ˆë‹¤. \n\në¹„ì†ì–´ë¡œ ë§ì´ì£ ... \n\n(ë‚œì´ë„â˜…â˜…â˜…â˜…â˜…)";
                 break;
         }
     }
 
-    //mainPanel ½ºÅ×ÀÌÁö ÆË¾÷ ´İ±â
+    //mainPanel ìŠ¤í…Œì´ì§€ íŒì—… ë‹«ê¸°
     public void ClosePopup()
     {
         popupPanel.SetActive(false);
     }
 
-    //mainPanel ½ºÅ×ÀÌÁö ÀüÅõ
+    //mainPanel ìŠ¤í…Œì´ì§€ ì „íˆ¬
     public void StartBattle()
     {
         popupPanel.SetActive(false);
@@ -247,14 +247,15 @@ public class MainSceneScript : MonoBehaviour
         }
     }
 
-    //mainPanel ¾÷±×·¹ÀÌµå ¹öÆ°
+    //mainPanel ì—…ê·¸ë ˆì´ë“œ ë²„íŠ¼
     public void UpgradeBtnClick()
     {
         BGMManger.SaveMainBGMTime();
         SceneManager.LoadScene("UpgradeScene");
     }
 
-    //endPanel ´Ù½ÃÇÏ±â ¹öÆ°
+
+    //endPanel ë‹¤ì‹œí•˜ê¸° ë²„íŠ¼
     public void RestartBtnClick()
     {
         PlayerPrefs.DeleteAll();
