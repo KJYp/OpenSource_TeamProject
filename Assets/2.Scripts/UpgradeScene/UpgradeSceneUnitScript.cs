@@ -10,7 +10,7 @@ public class UpgradeSceneUnitScript : MonoBehaviour
     public Sprite[] currentSprites;
 
     [Header("Animation")]
-    public float animationSpeed = 0.2f;
+    public float animationSpeed;
 
     private int spriteIndex = 0;
     private float timer = 0f;

@@ -192,7 +192,7 @@ public class MainSceneScript : MonoBehaviour
 
             case 2:
                 stageTitleText.text = "백년관";
-                stageDescriptionText.text = "\n기후변화융합학과 학생들의 본진인 백년관입니다. \n기상과 환경을 탐구하는 학생들의 열정이 가득한 곳입니다. \n\n우산이 없어서 비를 맞는 학생들이 많긴 하지만요. \n\n(난이도★☆☆☆☆)";
+                stageDescriptionText.text = "\n기후변화융합학과 학생들의 본진인 백년관입니다. \n기상과 환경을 탐구하는 학생들의 열정이 가득한 곳입니다. \n\n(난이도★☆☆☆☆)";
                 break;
 
             case 3:
