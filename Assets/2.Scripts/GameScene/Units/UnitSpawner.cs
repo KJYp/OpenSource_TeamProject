@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
+    // ★ 추가된 부분: 인스펙터에서 적군 생성기인지 체크할 수 있는 스위치!
+    [Header("Spawner Settings")]
+    public bool isEnemySpawner = false;
+
     [Header("Units")]
     public GameObject meleeUnitPrefab;
     public GameObject tankUnitPrefab;
@@ -14,11 +18,6 @@ public class UnitSpawner : MonoBehaviour
 
     [Header("Game Scene Script")]
     public GameSceneScript gameSceneScript;
-
-    // ==========================================
-    // ★ 버튼 클릭 시 마나를 검사하고 소환하는 로직 
-    // 기획안 수치 적용 완료!
-    // ==========================================
 
     public void SpawnMelee() // 컴공과 (120)
     {
@@ -50,9 +49,6 @@ public class UnitSpawner : MonoBehaviour
         SpawnUnit(damageUnitPrefab);
     }
 
-    // ==========================================
-
-    // 실제 유닛 생성 로직 (마나 검사는 위에서 끝났으므로 여기선 생성만 함)
     public void SpawnUnit(GameObject prefab)
     {
         if (prefab == null || allySpawnPoint == null)
@@ -96,6 +92,13 @@ public class UnitSpawner : MonoBehaviour
         if (balanceDatabase == null || upgradeState == null) return;
 
         int currentGrade = upgradeState.GetGrade(unitStats.unitType);
+
+        // ★ 적군 생성기(isEnemySpawner가 체크됨)일 때만 빨간색 로그 출력!
+        if (isEnemySpawner)
+        {
+            Debug.Log($"<color=red>▶ {unitStats.unitType} 유닛 생성 (학년 : {currentGrade})</color>");
+        }
+
         UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, currentGrade);
 
         if (data == null) return;
@@ -111,6 +114,12 @@ public class UnitSpawner : MonoBehaviour
         TryConnectData();
 
         if (balanceDatabase == null) return;
+
+        // ★ 적군 생성기(isEnemySpawner가 체크됨)일 때만 빨간색 로그 출력!
+        if (isEnemySpawner)
+        {
+            Debug.Log($"<color=red>▶ {unitStats.unitType} 유닛 생성 (학년 : {grade})</color>");
+        }
 
         UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, grade);
 
