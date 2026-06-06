@@ -871,9 +871,11 @@ MonoBehaviour:
   popupPanel: {fileID: 32823728}
   storyImage: {fileID: 1434947288}
   storySprite:
-  - {fileID: 21300000, guid: 0658648d00f103345b75d9aa1a0af3fe, type: 3}
-  - {fileID: 21300000, guid: 600c7f867fa8a8446896fc41e6664040, type: 3}
-  - {fileID: 21300000, guid: 105a2ddcfba81c2448debea5c5b69636, type: 3}
+  - {fileID: 2951457001153431821, guid: 9d7de9015486de649b8ea8c0522069f3, type: 3}
+  - {fileID: 6035261229302660457, guid: a6d42c480c8f34b44913ea42f484998d, type: 3}
+  - {fileID: -2922352395281615532, guid: 1be0e7744fec2d24eb0e00bf3b306158, type: 3}
+  - {fileID: 2570693983793009316, guid: dc94d55114255ec47adb03bd4be0eefd, type: 3}
+  - {fileID: -5147775823897025096, guid: c9f3f76cc0f632d4cb1d481318c421b8, type: 3}
   tutorialImage: {fileID: 429025727}
   tutorialSprite:
   - {fileID: 21300000, guid: cad9d689fb618f84abc5b43160248fc6, type: 3}
@@ -881,9 +883,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e636b22666161c441905148cd7820c89, type: 3}
   endingImage: {fileID: 1014149174}
   endingSprite:
-  - {fileID: 21300000, guid: 9a3c229891684df45a7bac93fa974bbf, type: 3}
-  - {fileID: 21300000, guid: 461c1c69d4ba4a749939bb7570740524, type: 3}
-  - {fileID: 21300000, guid: 011a5b185c07de045845ae14dfa68494, type: 3}
+  - {fileID: -3074712795068796413, guid: 4c4cf6848e935d74d8a6f202e82af611, type: 3}
   stageTitleText: {fileID: 64746233}
   stageDescriptionText: {fileID: 665966906}
 --- !u!224 &428634929
@@ -2751,14 +2751,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60167706, g: 0.11163184, b: 0.11163184, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 2937831384049548367, guid: dd84bf380b44b334e87583f8dc832d65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2908,7 +2908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -3074712795068796413, guid: 4c4cf6848e935d74d8a6f202e82af611, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

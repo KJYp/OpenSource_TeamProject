@@ -617,6 +617,7 @@ MonoBehaviour:
   resultText: {fileID: 1016763393}
   goldText: {fileID: 46323470}
   stageParameter: 0
+  currentMana: 0
 --- !u!4 &229624167
 Transform:
   m_ObjectHideFlags: 0
@@ -1909,36 +1910,6 @@ MonoBehaviour:
     interval: 0
     delay: 5
     grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 2
-    interval: 1
-    delay: 5
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 5
-    grade: 1
   stage2List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -1991,36 +1962,6 @@ MonoBehaviour:
     delay: 5
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 2
-    interval: 1
-    delay: 5
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 2
-    interval: 1
-    delay: 3
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 5
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 5
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
     count: 1
     interval: 0
     delay: 4
@@ -2096,41 +2037,6 @@ MonoBehaviour:
     interval: 1
     delay: 5
     grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 2
-    grade: 1
   stage4List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 2
@@ -2192,41 +2098,6 @@ MonoBehaviour:
     interval: 1
     delay: 5
     grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 3
-    interval: 1
-    delay: 3
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 5
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 2
-    interval: 1
-    delay: 4
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 1
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 3
   stage5List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 1
@@ -2308,46 +2179,6 @@ MonoBehaviour:
     interval: 1
     delay: 5
     grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 2
-    interval: 1
-    delay: 3
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 2
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 2
-    grade: 3
   stage6List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2449,61 +2280,6 @@ MonoBehaviour:
     interval: 0
     delay: 3
     grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 2
-    interval: 1
-    delay: 3
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 4
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 3
-  - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 4
-  - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
-    count: 1
-    interval: 0
-    delay: 3
-    grade: 4
 --- !u!4 &597938808
 Transform:
   m_ObjectHideFlags: 0
@@ -3727,7 +3503,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 67.80775, y: -57.5152}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &978853930
 MonoBehaviour:
@@ -3749,7 +3525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3adf8a756aebb7d4694e571498964367, type: 3}
+  m_Sprite: {fileID: 7788941916216223502, guid: 0b8ef71de5fc1ba478abd0a6c047b6aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4163,6 +3939,7 @@ MonoBehaviour:
   healerUnitPrefab: {fileID: 7524034082308197803, guid: 51765a12350fe4f4991a245783d1848e, type: 3}
   damageUnitPrefab: {fileID: 7524034082308197803, guid: 37f9dc1185d5e0b4395013eb3eb6502b, type: 3}
   allySpawnPoint: {fileID: 901080266}
+  gameSceneScript: {fileID: 0}
   balanceDatabase: {fileID: 0}
   upgradeState: {fileID: 331788716}
 --- !u!4 &1043564227
@@ -6765,6 +6542,7 @@ MonoBehaviour:
   healerUnitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
   damageUnitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
   allySpawnPoint: {fileID: 579812769}
+  gameSceneScript: {fileID: 0}
   balanceDatabase: {fileID: 0}
   upgradeState: {fileID: 300374315}
 --- !u!4 &2006355269

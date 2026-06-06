@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bfe93d2467b34c74d9a85e686917870a
+guid: dd84bf380b44b334e87583f8dc832d65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6692411940186962571
-    second: ManaCostImage_0
+      213: 2937831384049548367
+    second: StartImage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ManaCostImage_0
+      name: StartImage_0
       rect:
         serializedVersion: 2
-        x: 263
-        y: 126
-        width: 537
-        height: 786
+        x: 0
+        y: 0
+        width: 1264
+        height: 842
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8a3d61a33930ec50800000000000000
-      internalID: 6692411940186962571
+      spriteID: f4c7448141645c820800000000000000
+      internalID: 2937831384049548367
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ManaCostImage_0: 6692411940186962571
+      StartImage_0: 2937831384049548367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
