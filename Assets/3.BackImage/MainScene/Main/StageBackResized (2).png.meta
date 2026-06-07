@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a41a2e80750695348917308d7518738a
+guid: 3eea84a298b632b42b26a75520023016
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1758742576720085968
-    second: StageBack_0
+      213: -8115896767545511189
+    second: StageBackResized (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StageBack_0
+      name: StageBackResized (2)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 900
+        width: 1536
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d381c82e0f486810800000000000000
-      internalID: 1758742576720085968
+      spriteID: be275b8c3ea8e5f80800000000000000
+      internalID: -8115896767545511189
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StageBack_0: 1758742576720085968
+      StageBackResized (2)_0: -8115896767545511189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2481,7 +2481,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
     interval: 0
-    delay: 5
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 755482919}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
@@ -2537,7 +2537,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
     count: 1
     interval: 0
-    delay: 5
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2557,7 +2557,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
@@ -2577,7 +2577,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
     interval: 0
-    delay: 5
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2608,7 +2608,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
     interval: 0
-    delay: 5
+    delay: 10
     grade: 1
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2628,7 +2628,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
@@ -2648,7 +2648,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 3
     interval: 1
-    delay: 5
+    delay: 10
     grade: 1
   stage5List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 2
     interval: 1
-    delay: 5
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2709,7 +2709,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 89338da4c5d77f642a9d6cb072915f95, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 1
@@ -2729,7 +2729,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 2
     interval: 1
-    delay: 5
+    delay: 10
     grade: 2
   stage6List:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
@@ -2750,7 +2750,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
@@ -2770,7 +2770,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 1
     interval: 0
-    delay: 3
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 2ebf7cb25702db54bb1a7e7b9b2d6e89, type: 3}
     count: 1
@@ -2790,7 +2790,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 2
   - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
     count: 1
@@ -2810,7 +2810,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 77f51cd994f0b06408b2bf6231499d00, type: 3}
     count: 1
     interval: 0
-    delay: 4
+    delay: 10
     grade: 3
   - unitPrefab: {fileID: 7524034082308197803, guid: f658db2627efb06408fdd61e3bbd6382, type: 3}
     count: 1
@@ -2830,7 +2830,7 @@ MonoBehaviour:
   - unitPrefab: {fileID: 7524034082308197803, guid: 7795b014d6e5cf444bc0258828097681, type: 3}
     count: 1
     interval: 0
-    delay: 3
+    delay: 10
     grade: 3
 --- !u!4 &597938808
 Transform:
