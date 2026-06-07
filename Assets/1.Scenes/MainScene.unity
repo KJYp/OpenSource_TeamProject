@@ -878,9 +878,9 @@ MonoBehaviour:
   - {fileID: -5147775823897025096, guid: c9f3f76cc0f632d4cb1d481318c421b8, type: 3}
   tutorialImage: {fileID: 429025727}
   tutorialSprite:
-  - {fileID: 21300000, guid: cad9d689fb618f84abc5b43160248fc6, type: 3}
-  - {fileID: 21300000, guid: 9899918fb2170374db7a527b91550313, type: 3}
-  - {fileID: 21300000, guid: e636b22666161c441905148cd7820c89, type: 3}
+  - {fileID: 4900578740743938851, guid: f0d2e1c015efff24c8c77f885d575734, type: 3}
+  - {fileID: 7354584816651512938, guid: 8a99006e29c1fbb469eb6549511bc697, type: 3}
+  - {fileID: 7923387036759171025, guid: 5bffdf43ee311954cb96487bb18388ae, type: 3}
   endingImage: {fileID: 1014149174}
   endingSprite:
   - {fileID: -3074712795068796413, guid: 4c4cf6848e935d74d8a6f202e82af611, type: 3}
@@ -940,7 +940,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1579.656, y: 757.3184}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429025727
 MonoBehaviour:
