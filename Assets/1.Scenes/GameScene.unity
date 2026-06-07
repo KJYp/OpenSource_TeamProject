@@ -1006,7 +1006,7 @@ MonoBehaviour:
   stage2_background: {fileID: 711513568527557887, guid: 64f38bfd1c6be8a44b7b6b5507cfb020, type: 3}
   stage2_enemyBase: {fileID: 3032400113675930684, guid: ea61fb5c5913de7499d60eb63cf60a7b, type: 3}
   stage3_background: {fileID: -6923755828933855085, guid: 112fa0d7641b64749849c868b72ed65a, type: 3}
-  stage3_enemyBase: {fileID: -342519204, guid: ceb6831b6cea0e84cabf070598a3e3ad, type: 3}
+  stage3_enemyBase: {fileID: 9221245157310142129, guid: 0a7d8a5c4f830b348935b1f1e1ca14a4, type: 3}
   stage4_background: {fileID: -919547822568125937, guid: 2f647eb079fb5d94dbcf54221986a6f3, type: 3}
   stage4_enemyBase: {fileID: 697807268, guid: 207996c31ed879540a31b4415b361466, type: 3}
   stage5_background: {fileID: -5118783148100408553, guid: 07387b2e28035704bbd5bf12af9a177b, type: 3}
