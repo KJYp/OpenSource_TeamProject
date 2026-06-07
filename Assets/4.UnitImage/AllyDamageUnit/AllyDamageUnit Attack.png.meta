@@ -132,8 +132,8 @@ TextureImporter:
         y: 0
         width: 384
         height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: AllyDamageUnit Attack_1
       rect:
         serializedVersion: 2
-        x: 385
+        x: 384
         y: 0
-        width: 344
+        width: 369
         height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: AllyDamageUnit Attack_2
       rect:
         serializedVersion: 2
-        x: 740
+        x: 753
         y: 0
-        width: 464
+        width: 449
         height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: AllyDamageUnit Attack_3
       rect:
         serializedVersion: 2
-        x: 1152
+        x: 1203
         y: 0
-        width: 384
+        width: 333
         height: 1024
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
