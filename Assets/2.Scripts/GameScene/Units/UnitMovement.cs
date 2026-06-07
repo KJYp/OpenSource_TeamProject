@@ -38,11 +38,17 @@ public class UnitMovement : MonoBehaviour
                 return;
             }
 
-            if (animationController != null)
+            if (combat != null && combat.IsTargetAhead())
             {
-                animationController.PlayIdle();
+                if (animationController != null)
+                {
+                    animationController.PlayIdle();
+                }
+
+                return;
             }
 
+            MoveForward();
             return;
         }
 

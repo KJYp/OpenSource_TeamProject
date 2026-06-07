@@ -1307,11 +1307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7ddcca8209d2f42bcbeef8d6563b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnitUpgradeState
-  computerScienceGrade: 4
-  climateGrade: 3
-  chemistryGrade: 2
-  globalSportsGrade: 2
-  interpretationGrade: 2
+  computerScienceGrade: 1
+  climateGrade: 1
+  chemistryGrade: 1
+  globalSportsGrade: 1
+  interpretationGrade: 1
 --- !u!4 &300374316
 Transform:
   m_ObjectHideFlags: 0
@@ -1434,55 +1434,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &331788715
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 331788717}
-  - component: {fileID: 331788716}
-  m_Layer: 0
-  m_Name: AllyUnitUpgradeState
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &331788716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331788715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7ddcca8209d2f42bcbeef8d6563b08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UnitUpgradeState
-  computerScienceGrade: 4
-  climateGrade: 3
-  chemistryGrade: 2
-  globalSportsGrade: 2
-  interpretationGrade: 2
---- !u!4 &331788717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331788715}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290.6172, y: 157.00687, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338225247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4807,7 +4758,7 @@ MonoBehaviour:
   allySpawnPoint: {fileID: 901080266}
   gameSceneScript: {fileID: 0}
   balanceDatabase: {fileID: 0}
-  upgradeState: {fileID: 331788716}
+  upgradeState: {fileID: 0}
 --- !u!4 &1043564227
 Transform:
   m_ObjectHideFlags: 0
@@ -6040,7 +5991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseHealth
   GameSceneScript: {fileID: 229624166}
   team: 0
-  maxHp: 10
+  maxHp: 1000
   currentHp: 0
   isDestroyed: 0
 --- !u!61 &1487937605
@@ -8684,7 +8635,6 @@ SceneRoots:
   - {fileID: 579812769}
   - {fileID: 1043564227}
   - {fileID: 2006355269}
-  - {fileID: 331788717}
   - {fileID: 300374316}
   - {fileID: 1726549135}
   - {fileID: 240169336}

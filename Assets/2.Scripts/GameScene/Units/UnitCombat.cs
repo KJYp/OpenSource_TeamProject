@@ -309,6 +309,44 @@ public class UnitCombat : MonoBehaviour
         return false;
     }
 
+    public bool IsTargetAhead()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, stats.attackRange);
+
+        foreach (Collider2D hit in hits)
+        {
+            UnitStats targetStats = hit.GetComponent<UnitStats>();
+
+            if (targetStats == null)
+            {
+                continue;
+            }
+
+            if (targetStats.isDead)
+            {
+                continue;
+            }
+
+            if (targetStats.attackType == AttackType.Healer)
+            {
+                continue;
+            }
+
+            float dx = targetStats.transform.position.x - transform.position.x;
+
+            if (stats.team == UnitTeam.Ally && dx > 0 && dx < stats.attackRange)
+            {
+                return true;
+            }
+            else if (stats.team == UnitTeam.Enemy && dx < 0 && dx > -stats.attackRange)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void OnDrawGizmosSelected()
     {
         UnitStats unitStats = GetComponent<UnitStats>();

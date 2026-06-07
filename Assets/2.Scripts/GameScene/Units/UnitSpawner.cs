@@ -94,10 +94,7 @@ public class UnitSpawner : MonoBehaviour
         int currentGrade = upgradeState.GetGrade(unitStats.unitType);
 
         // ★ 적군 생성기(isEnemySpawner가 체크됨)일 때만 빨간색 로그 출력!
-        if (isEnemySpawner)
-        {
-            Debug.Log($"<color=red>▶ {unitStats.unitType} 유닛 생성 (학년 : {currentGrade})</color>");
-        }
+        Debug.Log($"<color=blue>▶ {unitStats.unitType} 유닛 생성 (학년 : {currentGrade})</color>");
 
         UnitGradeStats data = balanceDatabase.GetStats(unitStats.unitType, currentGrade);
 
