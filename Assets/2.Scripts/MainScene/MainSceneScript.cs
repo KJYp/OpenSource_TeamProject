@@ -15,6 +15,8 @@ public class MainSceneScript : MonoBehaviour
     public GameObject endPanel;
     public GameObject popupPanel;
 
+    public Button resetBtn;
+
     public Image storyImage;
     public Sprite[] storySprite;
 
@@ -86,19 +88,22 @@ public class MainSceneScript : MonoBehaviour
 
     void Update()
     {
-        if (storyPlaying && Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            StoryNext();
-        }
+            if (storyPlaying) 
+            {
+                StoryNext();
+            }
 
-        if (tutorialPlaying && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            TutorialNext();
-        }
+            if (tutorialPlaying)
+            {
+                TutorialNext();
+            }
 
-        if (endingPlaying && Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            EndingNext();
+            if (endingPlaying)
+            {
+                EndingNext();
+            }
         }
     }
 
@@ -174,6 +179,7 @@ public class MainSceneScript : MonoBehaviour
         else
         {
             endingPlaying = false;
+            resetBtn.gameObject.SetActive(true);
         }
     }
 
