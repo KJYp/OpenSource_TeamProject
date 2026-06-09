@@ -38,9 +38,9 @@ public class GameSceneScript : MonoBehaviour
     // [마나 관련 변수]
     [Header("마나 시스템")]
     public float currentMana = 0; // 초당 회복을 위해 float으로 관리
-    private int maxMana = 100;
+    private int maxMana = 100; //   최대 마나
     private int manaRegenRate = 0; // 초당 마나 회복량
-    private float manaRegenTimer = 0f;
+    private float manaRegenTimer = 0f; // 마나 회복 타이머
 
     void Start()
     {
@@ -57,7 +57,7 @@ public class GameSceneScript : MonoBehaviour
             return;
         }
 
-        // 1. 기획안(3페이지)에 맞춘 스테이지별 마나 세팅
+        // 스테이지별 마나 세팅
         SetStageMana(stageParameter);
 
         switch (stageParameter)
@@ -136,7 +136,7 @@ public class GameSceneScript : MonoBehaviour
         UpdateMana();
     }
 
-    // ★ 유닛 소환할 때 마나를 소모하는 함수 (다른 스크립트에서 호출)
+    // 유닛 소환시 마나 소모
     public bool UseMana(int cost)
     {
         if (currentMana >= cost)
@@ -148,7 +148,7 @@ public class GameSceneScript : MonoBehaviour
         return false; // 마나 부족 (소환 실패)
     }
 
-    // ★ 적 처치 시 보상 마나를 획득하는 함수 (다른 스크립트에서 호출)
+    // 적 처치 시 마나 획득
     public void AddMana(int amount)
     {
         currentMana += amount;

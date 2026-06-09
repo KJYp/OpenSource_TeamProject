@@ -33,6 +33,7 @@ public class StageSpawnScript : MonoBehaviour
     public SpawnData[] stage5List;
     public SpawnData[] stage6List;
 
+    // 스테이지 유닛 생성 함수: stageParameter에 따라 해당 스테이지의 웨이브 루틴 시작
     public void SpawnStageUnit(int stageParameter)
     {
         switch (stageParameter)
@@ -67,21 +68,20 @@ public class StageSpawnScript : MonoBehaviour
         }
     }
 
+    // 웨이브 루틴: 각 웨이브의 유닛을 생성
     private IEnumerator SpawnRoutine(SpawnData[] list)
     {
-        while (true)
+        foreach (SpawnData data in list)
         {
-            foreach (SpawnData data in list)
+            yield return new WaitForSeconds(Mathf.Max(data.delay, 0.1f));
+
+            for (int i = 0; i < data.count; i++)
             {
-                yield return new WaitForSeconds(Mathf.Max(data.delay, 0.1f));
+                unitSpawner.SpawnUnit(data.unitPrefab, data.grade);
 
-                for (int i = 0; i < data.count; i++)
-                {
-                    unitSpawner.SpawnUnit(data.unitPrefab, data.grade);
-
-                    yield return new WaitForSeconds(Mathf.Max(data.interval, 0.1f));
-                }
+                yield return new WaitForSeconds(Mathf.Max(data.interval, 0.1f));
             }
         }
     }
+
 }
