@@ -68,18 +68,21 @@ public class StageSpawnScript : MonoBehaviour
         }
     }
 
-    // 웨이브 루틴: 각 웨이브의 유닛을 생성
+    // 웨이브 루틴:   각 웨이브의 유닛을 생성
     private IEnumerator SpawnRoutine(SpawnData[] list)
     {
-        foreach (SpawnData data in list)
+        while (true)
         {
-            yield return new WaitForSeconds(Mathf.Max(data.delay, 0.1f));
-
-            for (int i = 0; i < data.count; i++)
+            foreach (SpawnData data in list)
             {
-                unitSpawner.SpawnUnit(data.unitPrefab, data.grade);
+                yield return new WaitForSeconds(Mathf.Max(data.delay, 0.1f));
 
-                yield return new WaitForSeconds(Mathf.Max(data.interval, 0.1f));
+                for (int i = 0; i < data.count; i++)
+                {
+                    unitSpawner.SpawnUnit(data.unitPrefab, data.grade);
+
+                    yield return new WaitForSeconds(Mathf.Max(data.interval, 0.1f));
+                }
             }
         }
     }
